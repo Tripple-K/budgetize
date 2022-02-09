@@ -1,9 +1,3 @@
-//
-//  budgetizeApp.swift
-//  budgetize
-//
-//  Created by Danylo Krysevych on 09.02.2022.
-//
 
 import SwiftUI
 
