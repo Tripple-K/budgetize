@@ -63,7 +63,6 @@
 		BA64371527B42B610078BA6A = {
 			isa = PBXGroup;
 			children = (
-				80703AD827B432840046BBBA /* .gitignore */,
 				BA64372027B42B610078BA6A /* budgetize */,
 				BA64371F27B42B610078BA6A /* Products */,
 			);
@@ -80,6 +79,7 @@
 		BA64372027B42B610078BA6A /* budgetize */ = {
 			isa = PBXGroup;
 			children = (
+				80703AD827B432840046BBBA /* .gitignore */,
 				80703ADD27B4339A0046BBBA /* ViewModels */,
 				80703ADC27B4338B0046BBBA /* Views */,
 				80703ADB27B433800046BBBA /* Services */,
