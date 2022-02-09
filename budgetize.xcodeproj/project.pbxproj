@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		99F68562C7E5B192508A46B0 /* Pods_budgetize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 715CF8047DBB88258D33705C /* Pods_budgetize.framework */; };
 		BA64372227B42B610078BA6A /* budgetizeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA64372127B42B610078BA6A /* budgetizeApp.swift */; };
 		BA64372627B42B630078BA6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA64372527B42B630078BA6A /* Assets.xcassets */; };
 		BA64372927B42B630078BA6A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA64372827B42B630078BA6A /* Preview Assets.xcassets */; };
 		BA64373027B441C10078BA6A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = BA64372F27B441C10078BA6A /* .gitignore */; };
+		CEC8838E1413B15222F841FA /* Pods_budgetize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46BE4CD344B355DF0329B71D /* Pods_budgetize.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		60F983B9F6A04B3280BA8E1A /* Pods-budgetize.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-budgetize.release.xcconfig"; path = "Target Support Files/Pods-budgetize/Pods-budgetize.release.xcconfig"; sourceTree = "<group>"; };
-		715CF8047DBB88258D33705C /* Pods_budgetize.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_budgetize.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46BE4CD344B355DF0329B71D /* Pods_budgetize.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_budgetize.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78E79601C4C4FE0E9836270A /* Pods-budgetize.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-budgetize.release.xcconfig"; path = "Target Support Files/Pods-budgetize/Pods-budgetize.release.xcconfig"; sourceTree = "<group>"; };
+		8CCEBBF9F63D5ABA369A947A /* Pods-budgetize.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-budgetize.debug.xcconfig"; path = "Target Support Files/Pods-budgetize/Pods-budgetize.debug.xcconfig"; sourceTree = "<group>"; };
 		BA64371E27B42B610078BA6A /* budgetize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = budgetize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA64372127B42B610078BA6A /* budgetizeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = budgetizeApp.swift; sourceTree = "<group>"; };
 		BA64372527B42B630078BA6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA64372827B42B630078BA6A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BA64372F27B441C10078BA6A /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		C455C7558D012C4B399387FF /* Pods-budgetize.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-budgetize.debug.xcconfig"; path = "Target Support Files/Pods-budgetize/Pods-budgetize.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,31 +30,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99F68562C7E5B192508A46B0 /* Pods_budgetize.framework in Frameworks */,
+				CEC8838E1413B15222F841FA /* Pods_budgetize.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		55AB5C337AB2729BA68CF3AD /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C455C7558D012C4B399387FF /* Pods-budgetize.debug.xcconfig */,
-				60F983B9F6A04B3280BA8E1A /* Pods-budgetize.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		7DF3679CE5F701B65101349D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				715CF8047DBB88258D33705C /* Pods_budgetize.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		80703ADA27B433750046BBBA /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,14 +65,22 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		9D1441FD09B27A7D0933FDA8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46BE4CD344B355DF0329B71D /* Pods_budgetize.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BA64371527B42B610078BA6A = {
 			isa = PBXGroup;
 			children = (
 				BA64372F27B441C10078BA6A /* .gitignore */,
 				BA64372027B42B610078BA6A /* budgetize */,
 				BA64371F27B42B610078BA6A /* Products */,
-				55AB5C337AB2729BA68CF3AD /* Pods */,
-				7DF3679CE5F701B65101349D /* Frameworks */,
+				FB337C2B942D19A135C31376 /* Pods */,
+				9D1441FD09B27A7D0933FDA8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +114,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		FB337C2B942D19A135C31376 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8CCEBBF9F63D5ABA369A947A /* Pods-budgetize.debug.xcconfig */,
+				78E79601C4C4FE0E9836270A /* Pods-budgetize.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,10 +130,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA64372C27B42B630078BA6A /* Build configuration list for PBXNativeTarget "budgetize" */;
 			buildPhases = (
-				CD5D2DBDA8E8E2C7174C146F /* [CP] Check Pods Manifest.lock */,
+				33499C320E426DE94660BC4A /* [CP] Check Pods Manifest.lock */,
 				BA64371A27B42B610078BA6A /* Sources */,
 				BA64371B27B42B610078BA6A /* Frameworks */,
 				BA64371C27B42B610078BA6A /* Resources */,
+				53249FD26226DAA42AAA728F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -192,7 +192,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		CD5D2DBDA8E8E2C7174C146F /* [CP] Check Pods Manifest.lock */ = {
+		33499C320E426DE94660BC4A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -212,6 +212,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		53249FD26226DAA42AAA728F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-budgetize/Pods-budgetize-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-budgetize/Pods-budgetize-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-budgetize/Pods-budgetize-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -346,14 +363,15 @@
 		};
 		BA64372D27B42B630078BA6A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C455C7558D012C4B399387FF /* Pods-budgetize.debug.xcconfig */;
+			baseConfigurationReference = 8CCEBBF9F63D5ABA369A947A /* Pods-budgetize.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"budgetize/Preview Content\"";
-				DEVELOPMENT_TEAM = GZ3T2DXTF8;
+				DEVELOPMENT_TEAM = ZQ532X6DQG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -361,14 +379,15 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pfriedrix.budgetize;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eugene-ned.budgetize";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -377,14 +396,15 @@
 		};
 		BA64372E27B42B630078BA6A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60F983B9F6A04B3280BA8E1A /* Pods-budgetize.release.xcconfig */;
+			baseConfigurationReference = 78E79601C4C4FE0E9836270A /* Pods-budgetize.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"budgetize/Preview Content\"";
-				DEVELOPMENT_TEAM = GZ3T2DXTF8;
+				DEVELOPMENT_TEAM = ZQ532X6DQG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -392,14 +412,15 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pfriedrix.budgetize;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eugene-ned.budgetize";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
