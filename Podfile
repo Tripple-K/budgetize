@@ -8,6 +8,7 @@ target 'budgetize' do
   # For example, to use Firebase Authentication and Cloud Firestore
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  pod 'GoogleSignIn'
 
   # Pods for budgetize
 
