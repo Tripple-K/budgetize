@@ -1,0 +1,6 @@
+framework module Pods_budgetize {
+  umbrella header "Pods-budgetize-umbrella.h"
+
+  export *
+  module * { export * }
+}
