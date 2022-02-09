@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80703AD927B432840046BBBA /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 80703AD827B432840046BBBA /* .gitignore */; };
 		BA64372227B42B610078BA6A /* budgetizeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA64372127B42B610078BA6A /* budgetizeApp.swift */; };
 		BA64372427B42B610078BA6A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA64372327B42B610078BA6A /* ContentView.swift */; };
 		BA64372627B42B630078BA6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA64372527B42B630078BA6A /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		80703AD827B432840046BBBA /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		BA64371E27B42B610078BA6A /* budgetize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = budgetize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA64372127B42B610078BA6A /* budgetizeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = budgetizeApp.swift; sourceTree = "<group>"; };
 		BA64372327B42B610078BA6A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -35,6 +37,7 @@
 		BA64371527B42B610078BA6A = {
 			isa = PBXGroup;
 			children = (
+				80703AD827B432840046BBBA /* .gitignore */,
 				BA64372027B42B610078BA6A /* budgetize */,
 				BA64371F27B42B610078BA6A /* Products */,
 			);
@@ -126,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA64372927B42B630078BA6A /* Preview Assets.xcassets in Resources */,
+				80703AD927B432840046BBBA /* .gitignore in Resources */,
 				BA64372627B42B630078BA6A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
