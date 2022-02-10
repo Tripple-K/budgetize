@@ -16,13 +16,13 @@
 		BA64372627B42B630078BA6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA64372527B42B630078BA6A /* Assets.xcassets */; };
 		BA64372927B42B630078BA6A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA64372827B42B630078BA6A /* Preview Assets.xcassets */; };
 		BA64373027B441C10078BA6A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = BA64372F27B441C10078BA6A /* .gitignore */; };
+		BA64373227B519CF0078BA6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA64373127B519CF0078BA6A /* GoogleService-Info.plist */; };
 		CEC8838E1413B15222F841FA /* Pods_budgetize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46BE4CD344B355DF0329B71D /* Pods_budgetize.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		46BE4CD344B355DF0329B71D /* Pods_budgetize.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_budgetize.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78E79601C4C4FE0E9836270A /* Pods-budgetize.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-budgetize.release.xcconfig"; path = "Target Support Files/Pods-budgetize/Pods-budgetize.release.xcconfig"; sourceTree = "<group>"; };
-		8016140327B5176B0030F4BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		80CA6E3C27B46D9E0015F1A2 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		80CA6E3E27B46F480015F1A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		80CA6E3F27B46FCE0015F1A2 /* GoogleAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthViewModel.swift; sourceTree = "<group>"; };
@@ -35,6 +35,7 @@
 		BA64372527B42B630078BA6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA64372827B42B630078BA6A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BA64372F27B441C10078BA6A /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		BA64373127B519CF0078BA6A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +113,7 @@
 		BA64372027B42B610078BA6A /* budgetize */ = {
 			isa = PBXGroup;
 			children = (
+				BA64373127B519CF0078BA6A /* GoogleService-Info.plist */,
 				80CA6E3E27B46F480015F1A2 /* Info.plist */,
 				80703ADD27B4339A0046BBBA /* ViewModels */,
 				80703ADC27B4338B0046BBBA /* Views */,
@@ -119,7 +121,6 @@
 				80703ADA27B433750046BBBA /* Models */,
 				BA64372127B42B610078BA6A /* budgetizeApp.swift */,
 				BA64372527B42B630078BA6A /* Assets.xcassets */,
-				8016140327B5176B0030F4BB /* GoogleService-Info.plist */,
 				BA64372727B42B630078BA6A /* Preview Content */,
 			);
 			path = budgetize;
@@ -203,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA64373027B441C10078BA6A /* .gitignore in Resources */,
+				BA64373227B519CF0078BA6A /* GoogleService-Info.plist in Resources */,
 				BA64372927B42B630078BA6A /* Preview Assets.xcassets in Resources */,
 				BA64372627B42B630078BA6A /* Assets.xcassets in Resources */,
 			);

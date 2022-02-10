@@ -11,9 +11,11 @@ struct ContentView: View {
   @EnvironmentObject var viewModel: GoogleAuthViewModel
   
   var body: some View {
-    switch viewModel.state {
-      case .signedIn: OnboardingView()
-      case .signedOut: WelcomeView()
-    }
+      if viewModel.state == .signedIn {
+          OnboardingView()
+      } else {
+          WelcomeView()
+      }
+    
   }
 }

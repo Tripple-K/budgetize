@@ -16,7 +16,7 @@ class GoogleAuthViewModel: ObservableObject {
         case signedOut
     }
     
-    @Published var state: SignInState = .signedOut
+    @Published var state: SignInState = Auth.auth().currentUser != nil ? .signedIn : .signedOut
     
     func signIn() {
         if GIDSignIn.sharedInstance.hasPreviousSignIn() {
@@ -57,11 +57,9 @@ class GoogleAuthViewModel: ObservableObject {
     }
     
     func signOut() {
-        // 1
         GIDSignIn.sharedInstance.signOut()
         
         do {
-            // 2
             try Auth.auth().signOut()
             
             state = .signedOut

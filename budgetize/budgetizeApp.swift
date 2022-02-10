@@ -10,7 +10,7 @@ struct budgetizeApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            WelcomeView()
+            ContentView()
                 .environmentObject(viewModel)
         }
     }
