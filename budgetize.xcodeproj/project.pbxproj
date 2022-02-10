@@ -16,7 +16,7 @@
 		BA64372627B42B630078BA6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA64372527B42B630078BA6A /* Assets.xcassets */; };
 		BA64372927B42B630078BA6A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA64372827B42B630078BA6A /* Preview Assets.xcassets */; };
 		BA64373027B441C10078BA6A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = BA64372F27B441C10078BA6A /* .gitignore */; };
-		BA64373227B519CF0078BA6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA64373127B519CF0078BA6A /* GoogleService-Info.plist */; };
+		BA64373427B527E20078BA6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA64373327B527E20078BA6A /* GoogleService-Info.plist */; };
 		CEC8838E1413B15222F841FA /* Pods_budgetize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46BE4CD344B355DF0329B71D /* Pods_budgetize.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,7 +35,7 @@
 		BA64372527B42B630078BA6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA64372827B42B630078BA6A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BA64372F27B441C10078BA6A /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		BA64373127B519CF0078BA6A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BA64373327B527E20078BA6A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +113,7 @@
 		BA64372027B42B610078BA6A /* budgetize */ = {
 			isa = PBXGroup;
 			children = (
-				BA64373127B519CF0078BA6A /* GoogleService-Info.plist */,
+				BA64373327B527E20078BA6A /* GoogleService-Info.plist */,
 				80CA6E3E27B46F480015F1A2 /* Info.plist */,
 				80703ADD27B4339A0046BBBA /* ViewModels */,
 				80703ADC27B4338B0046BBBA /* Views */,
@@ -204,8 +204,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA64373027B441C10078BA6A /* .gitignore in Resources */,
-				BA64373227B519CF0078BA6A /* GoogleService-Info.plist in Resources */,
 				BA64372927B42B630078BA6A /* Preview Assets.xcassets in Resources */,
+				BA64373427B527E20078BA6A /* GoogleService-Info.plist in Resources */,
 				BA64372627B42B630078BA6A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,7 +412,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mamuebal.budgetize;
+				PRODUCT_BUNDLE_IDENTIFIER = com.triplek.budgetize;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -446,7 +446,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mamuebal.budgetize;
+				PRODUCT_BUNDLE_IDENTIFIER = com.triplek.budgetize;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
