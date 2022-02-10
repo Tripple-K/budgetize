@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8007477927B4856C006BC6F8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8007477827B4856C006BC6F8 /* GoogleService-Info.plist */; };
 		80CA6E3D27B46D9E0015F1A2 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA6E3C27B46D9E0015F1A2 /* WelcomeView.swift */; };
 		80CA6E4027B46FCE0015F1A2 /* GoogleAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA6E3F27B46FCE0015F1A2 /* GoogleAuthViewModel.swift */; };
 		80CA6E4227B476710015F1A2 /* GoogleSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA6E4127B476710015F1A2 /* GoogleSignInButton.swift */; };
@@ -23,7 +22,7 @@
 /* Begin PBXFileReference section */
 		46BE4CD344B355DF0329B71D /* Pods_budgetize.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_budgetize.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78E79601C4C4FE0E9836270A /* Pods-budgetize.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-budgetize.release.xcconfig"; path = "Target Support Files/Pods-budgetize/Pods-budgetize.release.xcconfig"; sourceTree = "<group>"; };
-		8007477827B4856C006BC6F8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/Safari/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8016140327B5176B0030F4BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		80CA6E3C27B46D9E0015F1A2 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		80CA6E3E27B46F480015F1A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		80CA6E3F27B46FCE0015F1A2 /* GoogleAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthViewModel.swift; sourceTree = "<group>"; };
@@ -120,7 +119,7 @@
 				80703ADA27B433750046BBBA /* Models */,
 				BA64372127B42B610078BA6A /* budgetizeApp.swift */,
 				BA64372527B42B630078BA6A /* Assets.xcassets */,
-				8007477827B4856C006BC6F8 /* GoogleService-Info.plist */,
+				8016140327B5176B0030F4BB /* GoogleService-Info.plist */,
 				BA64372727B42B630078BA6A /* Preview Content */,
 			);
 			path = budgetize;
@@ -203,7 +202,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8007477927B4856C006BC6F8 /* GoogleService-Info.plist in Resources */,
 				BA64373027B441C10078BA6A /* .gitignore in Resources */,
 				BA64372927B42B630078BA6A /* Preview Assets.xcassets in Resources */,
 				BA64372627B42B630078BA6A /* Assets.xcassets in Resources */,
@@ -397,7 +395,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"budgetize/Preview Content\"";
-				DEVELOPMENT_TEAM = ZQ532X6DQG;
+				DEVELOPMENT_TEAM = 5L3P894NU4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = budgetize/Info.plist;
@@ -412,12 +410,12 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kazzer.budgetize;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mamuebal.budgetize;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -431,7 +429,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"budgetize/Preview Content\"";
-				DEVELOPMENT_TEAM = ZQ532X6DQG;
+				DEVELOPMENT_TEAM = 5L3P894NU4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = budgetize/Info.plist;
@@ -446,12 +444,12 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kazzer.budgetize;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mamuebal.budgetize;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
