@@ -9,9 +9,18 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.795670261132-sb1nbuin476lncfk42ebbjbflu088r78</string>
+				<string>com.googleusercontent.apps.795670261132-dgrm661df0gbbtvchv7abhdjep6occ3a</string>
 			</array>
 		</dict>
 	</array>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIColorName</key>
+		<string>.systemIndigo</string>
+		<key>UIImageName</key>
+		<string>logo</string>
+		<key>UILaunchScreen</key>
+		<dict/>
+	</dict>
 </dict>
 </plist>

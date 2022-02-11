@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		804909C727B6C7C900034FB1 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804909C627B6C7C900034FB1 /* SplashScreen.swift */; };
 		80CA6E3D27B46D9E0015F1A2 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA6E3C27B46D9E0015F1A2 /* WelcomeView.swift */; };
 		80CA6E4027B46FCE0015F1A2 /* GoogleAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA6E3F27B46FCE0015F1A2 /* GoogleAuthViewModel.swift */; };
 		80CA6E4227B476710015F1A2 /* GoogleSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA6E4127B476710015F1A2 /* GoogleSignInButton.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		46BE4CD344B355DF0329B71D /* Pods_budgetize.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_budgetize.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78E79601C4C4FE0E9836270A /* Pods-budgetize.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-budgetize.release.xcconfig"; path = "Target Support Files/Pods-budgetize/Pods-budgetize.release.xcconfig"; sourceTree = "<group>"; };
+		804909C627B6C7C900034FB1 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		80CA6E3C27B46D9E0015F1A2 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		80CA6E3E27B46F480015F1A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		80CA6E3F27B46FCE0015F1A2 /* GoogleAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthViewModel.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				80CA6E4127B476710015F1A2 /* GoogleSignInButton.swift */,
 				80CA6E4727B47CD60015F1A2 /* ContentView.swift */,
 				80CA6E4927B480F50015F1A2 /* OnboardingView.swift */,
+				804909C627B6C7C900034FB1 /* SplashScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			files = (
 				80CA6E4227B476710015F1A2 /* GoogleSignInButton.swift in Sources */,
 				80CA6E4027B46FCE0015F1A2 /* GoogleAuthViewModel.swift in Sources */,
+				804909C727B6C7C900034FB1 /* SplashScreen.swift in Sources */,
 				80CA6E4827B47CD60015F1A2 /* ContentView.swift in Sources */,
 				80CA6E4A27B480F50015F1A2 /* OnboardingView.swift in Sources */,
 				BA64372227B42B610078BA6A /* budgetizeApp.swift in Sources */,
@@ -403,7 +407,6 @@
 				INFOPLIST_FILE = budgetize/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -437,7 +440,6 @@
 				INFOPLIST_FILE = budgetize/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

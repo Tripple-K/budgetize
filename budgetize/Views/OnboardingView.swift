@@ -9,7 +9,7 @@ struct OnboardingView: View {
     var body: some View {
         VStack {
             Spacer()
-            Text("Onboarding!")
+            Text("Welcome to budgetize!")
             Spacer()
             Button(action: viewModel.signOut) {
                 Text("Sign out")
