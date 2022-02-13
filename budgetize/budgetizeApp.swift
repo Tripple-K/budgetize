@@ -6,18 +6,19 @@ struct budgetizeApp: App {
     @StateObject var viewModel = GoogleAuthViewModel()
     
     init() {
-        setupAuthentication()
+        setupFirebase()
     }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            InitView()
                 .environmentObject(viewModel)
         }
     }
 }
 
 extension budgetizeApp {
-    private func setupAuthentication() {
+    private func setupFirebase() {
         FirebaseApp.configure()
     }
 }

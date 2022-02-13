@@ -1,14 +1,15 @@
 
+
 import SwiftUI
 
-struct SplashScreen: View {
+struct MainView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct SplashScreen_Previews: PreviewProvider {
+struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        SplashScreen()
+        MainView()
     }
 }

@@ -1,22 +1,29 @@
-//
-//  GoogleAuthViewModel.swift
-//  budgetize
-//
-//  Created by Eugene Ned on 09.02.2022.
-//
 
 import Foundation
 import Firebase
 import GoogleSignIn
-import UIKit
+import SwiftUI
+
 
 class GoogleAuthViewModel: ObservableObject {
-    enum SignInState {
-        case signedIn
-        case signedOut
+    @Published var user: User?
+    @ObservedObject var userRepo = UserRepository()
+    
+    private var authenticationStateHandler: AuthStateDidChangeListenerHandle?
+    
+    init () {
+        addListeners()
     }
     
-    @Published var state: SignInState = Auth.auth().currentUser != nil ? .signedIn : .signedOut
+    private func addListeners() {
+        if let handle = authenticationStateHandler {
+            Auth.auth().removeStateDidChangeListener(handle)
+        }
+        authenticationStateHandler = Auth.auth()
+            .addStateDidChangeListener { _, user in
+                self.user = user
+            }
+    }
     
     func signIn() {
         if GIDSignIn.sharedInstance.hasPreviousSignIn() {
@@ -43,15 +50,18 @@ class GoogleAuthViewModel: ObservableObject {
             return
         }
         
-        guard let authentication = user?.authentication, let idToken = authentication.idToken else { return }
+        guard let user = user, let idToken = user.authentication.idToken, let userId = user.userID else { return }
         
-        let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: authentication.accessToken)
+        let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: user.authentication.accessToken)
         
-        Auth.auth().signIn(with: credential) { [unowned self] (_, error) in
+        Auth.auth().signIn(with: credential) { _, error in
             if let error = error {
                 print(error.localizedDescription)
-            } else {
-                self.state = .signedIn
+            }
+            self.userRepo.isExist(with: userId) { exist in
+                if !exist {
+                    self.userRepo.add(UserInfo(userId: userId, displayName: user.profile?.name ?? "", email: user.profile?.email ?? ""))
+                }
             }
         }
     }
@@ -61,8 +71,6 @@ class GoogleAuthViewModel: ObservableObject {
         
         do {
             try Auth.auth().signOut()
-            
-            state = .signedOut
         } catch {
             print(error.localizedDescription)
         }
