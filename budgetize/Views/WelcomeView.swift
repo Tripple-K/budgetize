@@ -13,7 +13,7 @@ struct WelcomeView: View {
     var body: some View {
         VStack {
             Spacer()
-            Image("image")
+            Image("welcome")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
             Text("budgetize")

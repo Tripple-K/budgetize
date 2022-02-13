@@ -1,7 +1,11 @@
-
+//
+//  OnboardingView.swift
+//  budgetize
+//
+//  Created by Eugene Ned on 13.02.2022.
+//
 
 import SwiftUI
-import GoogleSignIn
 
 struct OnboardingView: View {
     @EnvironmentObject var viewModel: GoogleAuthViewModel
@@ -11,14 +15,14 @@ struct OnboardingView: View {
             Spacer()
             Text("Welcome to budgetize!")
             Spacer()
-            Button(action: viewModel.signOut) {
-                Text("Sign out")
-            }
+//            Button(action: viewModel.signOut) {
+//                Text("Sign out")
+//            }
         }
     }
 }
 
-struct OndoardingView_Previews: PreviewProvider {
+struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
         OnboardingView()
     }
