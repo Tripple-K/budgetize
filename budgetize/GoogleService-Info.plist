@@ -30,5 +30,7 @@
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:795670261132:ios:a492c11ff45cf3a707faa9</string>
+	<key>DATABASE_URL</key>
+	<string>https://budgetize-9f216-default-rtdb.europe-west1.firebasedatabase.app</string>
 </dict>
 </plist>

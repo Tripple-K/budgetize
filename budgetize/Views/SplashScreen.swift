@@ -1,9 +1,3 @@
-//
-//  SplashScreen.swift
-//  budgetize
-//
-//  Created by Eugene Ned on 11.02.2022.
-//
 
 import SwiftUI
 

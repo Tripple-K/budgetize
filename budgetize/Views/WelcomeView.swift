@@ -13,7 +13,7 @@ struct WelcomeView: View {
     var body: some View {
         VStack {
             Spacer()
-            Image("image")
+            Image("welcome")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
             Text("budgetize")
@@ -26,11 +26,15 @@ struct WelcomeView: View {
                 .fontWeight(.light)
                 .multilineTextAlignment(.center)
             Spacer()
-            GoogleSignInButton()
-                .padding()
+            Text("Sign in with Google".uppercased())
+                .frame(minHeight: 50)
+                .background(Color.black)
+                .cornerRadius(10)
+                .foregroundColor(.white)
+                .padding(20)
                 .onTapGesture {
-                    viewModel.signIn()
-                }
+                    self.viewModel.signIn()
+            }
         }
     }
 }
