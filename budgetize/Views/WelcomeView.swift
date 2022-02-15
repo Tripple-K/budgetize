@@ -1,14 +1,10 @@
-//
-//  WelcomeView.swift
-//  budgetize
-//
-//  Created by Eugene Ned on 09.02.2022.
-//
+import FirebaseAuth
 
 import SwiftUI
 
 struct WelcomeView: View {
-    @EnvironmentObject var viewModel: GoogleAuthViewModel
+    @EnvironmentObject var viewModel: AuthViewModel
+    @ObservedObject var userRepo = UserRepository()
     
     var body: some View {
         VStack {
@@ -33,7 +29,14 @@ struct WelcomeView: View {
                 .foregroundColor(.white)
                 .padding(20)
                 .onTapGesture {
-                    self.viewModel.signIn()
+                    self.viewModel.login(with: "google.com") {
+                        guard let user = Auth.auth().currentUser, let _ = user.displayName, let _ = user.email else { return }
+                        userRepo.isExist(with: user.uid) { exist in
+                            if !exist {
+                                userRepo.add(UserInfo(userId: user.uid, displayName: user.displayName!, email: user.email!))
+                            }
+                        }
+                    }
             }
         }
     }

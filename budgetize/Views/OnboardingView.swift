@@ -4,7 +4,7 @@ import SwiftUI
 import Firebase
 
 struct OnboardingView: View {
-    @EnvironmentObject var viewModel: GoogleAuthViewModel
+    @EnvironmentObject var viewModel: AuthViewModel
     @AppStorage("firstContact") var firstContact = true
     
     @State var selectedSubveiw = 0
