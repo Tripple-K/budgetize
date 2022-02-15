@@ -20,11 +20,11 @@
 		BA4EF51927B98ED800815A55 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EF51827B98ED800815A55 /* UserInfo.swift */; };
 		BA4EF51B27B98EE800815A55 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EF51A27B98EE800815A55 /* Account.swift */; };
 		BA4EF51E27B9958E00815A55 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EF51D27B9958E00815A55 /* UserRepository.swift */; };
-		BA4EF52027B99C8100815A55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA4EF51F27B99C8100815A55 /* GoogleService-Info.plist */; };
 		BA64372227B42B610078BA6A /* budgetizeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA64372127B42B610078BA6A /* budgetizeApp.swift */; };
 		BA64372627B42B630078BA6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA64372527B42B630078BA6A /* Assets.xcassets */; };
 		BA64372927B42B630078BA6A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA64372827B42B630078BA6A /* Preview Assets.xcassets */; };
 		BA64373027B441C10078BA6A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = BA64372F27B441C10078BA6A /* .gitignore */; };
+		BA79BF8727BC2B9B00C06A80 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA79BF8627BC2B9B00C06A80 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,13 +43,12 @@
 		BA4EF51827B98ED800815A55 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserInfo.swift; path = budgetize/Views/UserInfo.swift; sourceTree = SOURCE_ROOT; };
 		BA4EF51A27B98EE800815A55 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Account.swift; path = budgetize/Views/Account.swift; sourceTree = SOURCE_ROOT; };
 		BA4EF51D27B9958E00815A55 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
-		BA4EF51F27B99C8100815A55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA64371E27B42B610078BA6A /* budgetize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = budgetize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA64372127B42B610078BA6A /* budgetizeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = budgetizeApp.swift; sourceTree = "<group>"; };
 		BA64372527B42B630078BA6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA64372827B42B630078BA6A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BA64372F27B441C10078BA6A /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		F4992510B80DC19E40C3FE72 /* Pods-budgetize.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-budgetize.release.xcconfig"; path = "Target Support Files/Pods-budgetize/Pods-budgetize.release.xcconfig"; sourceTree = "<group>"; };
+		BA79BF8627BC2B9B00C06A80 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,8 +140,8 @@
 		BA64372027B42B610078BA6A /* budgetize */ = {
 			isa = PBXGroup;
 			children = (
-				BA4EF51F27B99C8100815A55 /* GoogleService-Info.plist */,
 				80CA6E3E27B46F480015F1A2 /* Info.plist */,
+				BA79BF8627BC2B9B00C06A80 /* GoogleService-Info.plist */,
 				BA4EF51C27B9955800815A55 /* Repositories */,
 				80703ADD27B4339A0046BBBA /* ViewModels */,
 				80703ADC27B4338B0046BBBA /* Views */,
@@ -232,9 +231,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA4EF52027B99C8100815A55 /* GoogleService-Info.plist in Resources */,
 				BA64373027B441C10078BA6A /* .gitignore in Resources */,
 				BA64372927B42B630078BA6A /* Preview Assets.xcassets in Resources */,
+				BA79BF8727BC2B9B00C06A80 /* GoogleService-Info.plist in Resources */,
 				BA64372627B42B630078BA6A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
