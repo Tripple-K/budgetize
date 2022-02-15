@@ -10,10 +10,9 @@
 		804909C727B6C7C900034FB1 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804909C627B6C7C900034FB1 /* SplashScreen.swift */; };
 		80B6C21627B972D900EAC5E0 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B6C21527B972D900EAC5E0 /* OnboardingView.swift */; };
 		80CA6E3D27B46D9E0015F1A2 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA6E3C27B46D9E0015F1A2 /* WelcomeView.swift */; };
-		80CA6E4027B46FCE0015F1A2 /* GoogleAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA6E3F27B46FCE0015F1A2 /* GoogleAuthViewModel.swift */; };
+		80CA6E4027B46FCE0015F1A2 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA6E3F27B46FCE0015F1A2 /* AuthViewModel.swift */; };
 		80CA6E4227B476710015F1A2 /* GoogleSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA6E4127B476710015F1A2 /* GoogleSignInButton.swift */; };
 		80CA6E4827B47CD60015F1A2 /* InitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA6E4727B47CD60015F1A2 /* InitView.swift */; };
-		97AAADF3C3CAD39592193CD2 /* Pods_budgetize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42732DF4B029A2E6AEA243BD /* Pods_budgetize.framework */; };
 		BA4EF51327B986D500815A55 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EF51227B986D500815A55 /* MainView.swift */; };
 		BA4EF51527B98A4400815A55 /* CurrencyForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EF51427B98A4400815A55 /* CurrencyForm.swift */; };
 		BA4EF51727B98AF100815A55 /* AccountForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EF51627B98AF100815A55 /* AccountForm.swift */; };
@@ -25,19 +24,20 @@
 		BA64372927B42B630078BA6A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA64372827B42B630078BA6A /* Preview Assets.xcassets */; };
 		BA64373027B441C10078BA6A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = BA64372F27B441C10078BA6A /* .gitignore */; };
 		BA79BF8727BC2B9B00C06A80 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA79BF8627BC2B9B00C06A80 /* GoogleService-Info.plist */; };
+		BA79BF8E27BC397F00C06A80 /* GIDConfigurationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79BF8D27BC397F00C06A80 /* GIDConfigurationExtensions.swift */; };
+		BA79BF9027BC3BE700C06A80 /* OAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79BF8F27BC3BE700C06A80 /* OAuthService.swift */; };
+		F1CFE2C1EE4A838F9C0E63A0 /* Pods_budgetize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9525858CB50808F79C616B72 /* Pods_budgetize.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		42732DF4B029A2E6AEA243BD /* Pods_budgetize.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_budgetize.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		51B5D953130D3A3D910048BE /* Pods-budgetize.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-budgetize.release.xcconfig"; path = "Target Support Files/Pods-budgetize/Pods-budgetize.release.xcconfig"; sourceTree = "<group>"; };
 		804909C627B6C7C900034FB1 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		80B6C21527B972D900EAC5E0 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		80CA6E3C27B46D9E0015F1A2 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		80CA6E3E27B46F480015F1A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		80CA6E3F27B46FCE0015F1A2 /* GoogleAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthViewModel.swift; sourceTree = "<group>"; };
+		80CA6E3F27B46FCE0015F1A2 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		80CA6E4127B476710015F1A2 /* GoogleSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInButton.swift; sourceTree = "<group>"; };
 		80CA6E4727B47CD60015F1A2 /* InitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitView.swift; sourceTree = "<group>"; };
-		A8D80732C330794C20C084ED /* Pods-budgetize.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-budgetize.debug.xcconfig"; path = "Target Support Files/Pods-budgetize/Pods-budgetize.debug.xcconfig"; sourceTree = "<group>"; };
+		9525858CB50808F79C616B72 /* Pods_budgetize.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_budgetize.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA4EF51227B986D500815A55 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		BA4EF51427B98A4400815A55 /* CurrencyForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyForm.swift; sourceTree = "<group>"; };
 		BA4EF51627B98AF100815A55 /* AccountForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountForm.swift; sourceTree = "<group>"; };
@@ -50,6 +50,10 @@
 		BA64372827B42B630078BA6A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BA64372F27B441C10078BA6A /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		BA79BF8627BC2B9B00C06A80 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BA79BF8D27BC397F00C06A80 /* GIDConfigurationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIDConfigurationExtensions.swift; sourceTree = "<group>"; };
+		BA79BF8F27BC3BE700C06A80 /* OAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthService.swift; sourceTree = "<group>"; };
+		E8B3769B5A3C1EBFD8EDB7E7 /* Pods-budgetize.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-budgetize.release.xcconfig"; path = "Target Support Files/Pods-budgetize/Pods-budgetize.release.xcconfig"; sourceTree = "<group>"; };
+		FC143354E3F94348505A4B86 /* Pods-budgetize.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-budgetize.debug.xcconfig"; path = "Target Support Files/Pods-budgetize/Pods-budgetize.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,21 +61,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97AAADF3C3CAD39592193CD2 /* Pods_budgetize.framework in Frameworks */,
+				F1CFE2C1EE4A838F9C0E63A0 /* Pods_budgetize.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		274A43E56CAF0E335BDA3B4D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				42732DF4B029A2E6AEA243BD /* Pods_budgetize.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		80703ADA27B433750046BBBA /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,13 +75,6 @@
 				BA4EF51A27B98EE800815A55 /* Account.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		80703ADB27B433800046BBBA /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		80703ADC27B4338B0046BBBA /* Views */ = {
@@ -106,9 +95,17 @@
 		80703ADD27B4339A0046BBBA /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				80CA6E3F27B46FCE0015F1A2 /* GoogleAuthViewModel.swift */,
+				80CA6E3F27B46FCE0015F1A2 /* AuthViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B10C6F00E619282CF57CBF2A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9525858CB50808F79C616B72 /* Pods_budgetize.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		BA4EF51C27B9955800815A55 /* Repositories */ = {
@@ -126,7 +123,7 @@
 				BA64372027B42B610078BA6A /* budgetize */,
 				BA64371F27B42B610078BA6A /* Products */,
 				FB337C2B942D19A135C31376 /* Pods */,
-				274A43E56CAF0E335BDA3B4D /* Frameworks */,
+				B10C6F00E619282CF57CBF2A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,12 +138,12 @@
 		BA64372027B42B610078BA6A /* budgetize */ = {
 			isa = PBXGroup;
 			children = (
+				BA79BF8A27BC35D200C06A80 /* Services */,
 				80CA6E3E27B46F480015F1A2 /* Info.plist */,
 				BA79BF8627BC2B9B00C06A80 /* GoogleService-Info.plist */,
 				BA4EF51C27B9955800815A55 /* Repositories */,
 				80703ADD27B4339A0046BBBA /* ViewModels */,
 				80703ADC27B4338B0046BBBA /* Views */,
-				80703ADB27B433800046BBBA /* Services */,
 				80703ADA27B433750046BBBA /* Models */,
 				BA64372127B42B610078BA6A /* budgetizeApp.swift */,
 				BA64372527B42B630078BA6A /* Assets.xcassets */,
@@ -163,11 +160,20 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		BA79BF8A27BC35D200C06A80 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BA79BF8D27BC397F00C06A80 /* GIDConfigurationExtensions.swift */,
+				BA79BF8F27BC3BE700C06A80 /* OAuthService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		FB337C2B942D19A135C31376 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A8D80732C330794C20C084ED /* Pods-budgetize.debug.xcconfig */,
-				51B5D953130D3A3D910048BE /* Pods-budgetize.release.xcconfig */,
+				FC143354E3F94348505A4B86 /* Pods-budgetize.debug.xcconfig */,
+				E8B3769B5A3C1EBFD8EDB7E7 /* Pods-budgetize.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -179,11 +185,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA64372C27B42B630078BA6A /* Build configuration list for PBXNativeTarget "budgetize" */;
 			buildPhases = (
-				5631034EA642899A85E8E18F /* [CP] Check Pods Manifest.lock */,
+				96CB190A0D1B6D9AEC89C02B /* [CP] Check Pods Manifest.lock */,
 				BA64371A27B42B610078BA6A /* Sources */,
 				BA64371B27B42B610078BA6A /* Frameworks */,
 				BA64371C27B42B610078BA6A /* Resources */,
-				19BED286BD55172C48021873 /* [CP] Embed Pods Frameworks */,
+				D59660DF47921830A4CE638B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -242,24 +248,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		19BED286BD55172C48021873 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-budgetize/Pods-budgetize-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-budgetize/Pods-budgetize-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-budgetize/Pods-budgetize-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5631034EA642899A85E8E18F /* [CP] Check Pods Manifest.lock */ = {
+		96CB190A0D1B6D9AEC89C02B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -281,6 +270,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D59660DF47921830A4CE638B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-budgetize/Pods-budgetize-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-budgetize/Pods-budgetize-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-budgetize/Pods-budgetize-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -291,7 +297,8 @@
 				BA4EF51E27B9958E00815A55 /* UserRepository.swift in Sources */,
 				80CA6E4227B476710015F1A2 /* GoogleSignInButton.swift in Sources */,
 				BA4EF51327B986D500815A55 /* MainView.swift in Sources */,
-				80CA6E4027B46FCE0015F1A2 /* GoogleAuthViewModel.swift in Sources */,
+				BA79BF8E27BC397F00C06A80 /* GIDConfigurationExtensions.swift in Sources */,
+				80CA6E4027B46FCE0015F1A2 /* AuthViewModel.swift in Sources */,
 				BA4EF51527B98A4400815A55 /* CurrencyForm.swift in Sources */,
 				804909C727B6C7C900034FB1 /* SplashScreen.swift in Sources */,
 				BA4EF51B27B98EE800815A55 /* Account.swift in Sources */,
@@ -301,6 +308,7 @@
 				80CA6E3D27B46D9E0015F1A2 /* WelcomeView.swift in Sources */,
 				BA4EF51927B98ED800815A55 /* UserInfo.swift in Sources */,
 				80B6C21627B972D900EAC5E0 /* OnboardingView.swift in Sources */,
+				BA79BF9027BC3BE700C06A80 /* OAuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,7 +433,7 @@
 		};
 		BA64372D27B42B630078BA6A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8D80732C330794C20C084ED /* Pods-budgetize.debug.xcconfig */;
+			baseConfigurationReference = FC143354E3F94348505A4B86 /* Pods-budgetize.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -458,7 +466,7 @@
 		};
 		BA64372E27B42B630078BA6A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 51B5D953130D3A3D910048BE /* Pods-budgetize.release.xcconfig */;
+			baseConfigurationReference = E8B3769B5A3C1EBFD8EDB7E7 /* Pods-budgetize.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
