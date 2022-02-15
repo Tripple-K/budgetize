@@ -1,12 +1,12 @@
-import Firebase
 import SwiftUI
+import Firebase
 
 @main
 struct budgetizeApp: App {
     @StateObject var viewModel = GoogleAuthViewModel()
     
     init() {
-        setupFirebase()
+        FirebaseApp.configure()
     }
     
     var body: some Scene {
@@ -17,8 +17,8 @@ struct budgetizeApp: App {
     }
 }
 
-extension budgetizeApp {
-    private func setupFirebase() {
-        FirebaseApp.configure()
-    }
-}
+//extension budgetizeApp {
+//    private func setupFirebase() {
+//        FirebaseApp.configure()
+//    }
+//}
