@@ -1,9 +1,3 @@
-//
-//  CurrencyForm.swift
-//  budgetize
-//
-//  Created by Danylo Krysevych on 13.02.2022.
-//
 
 import SwiftUI
 

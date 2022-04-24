@@ -1,9 +1,4 @@
-//
-//  ContentView.swift
-//  budgetize
-//
-//  Created by Eugene Ned on 10.02.2022.
-//
+
 
 import SwiftUI
 

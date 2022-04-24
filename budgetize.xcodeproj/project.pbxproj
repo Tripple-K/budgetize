@@ -13,6 +13,7 @@
 		80CA6E4027B46FCE0015F1A2 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA6E3F27B46FCE0015F1A2 /* AuthViewModel.swift */; };
 		80CA6E4227B476710015F1A2 /* GoogleSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA6E4127B476710015F1A2 /* GoogleSignInButton.swift */; };
 		80CA6E4827B47CD60015F1A2 /* InitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA6E4727B47CD60015F1A2 /* InitView.swift */; };
+		BA1B5F232815CABD008A574A /* AppleAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1B5F222815CABD008A574A /* AppleAuth.swift */; };
 		BA4EF51327B986D500815A55 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EF51227B986D500815A55 /* MainView.swift */; };
 		BA4EF51527B98A4400815A55 /* CurrencyForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EF51427B98A4400815A55 /* CurrencyForm.swift */; };
 		BA4EF51727B98AF100815A55 /* AccountForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EF51627B98AF100815A55 /* AccountForm.swift */; };
@@ -38,6 +39,8 @@
 		80CA6E4127B476710015F1A2 /* GoogleSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInButton.swift; sourceTree = "<group>"; };
 		80CA6E4727B47CD60015F1A2 /* InitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitView.swift; sourceTree = "<group>"; };
 		9525858CB50808F79C616B72 /* Pods_budgetize.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_budgetize.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA1B5F212815CA42008A574A /* budgetize.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = budgetize.entitlements; sourceTree = "<group>"; };
+		BA1B5F222815CABD008A574A /* AppleAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuth.swift; sourceTree = "<group>"; };
 		BA4EF51227B986D500815A55 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		BA4EF51427B98A4400815A55 /* CurrencyForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyForm.swift; sourceTree = "<group>"; };
 		BA4EF51627B98AF100815A55 /* AccountForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountForm.swift; sourceTree = "<group>"; };
@@ -138,6 +141,7 @@
 		BA64372027B42B610078BA6A /* budgetize */ = {
 			isa = PBXGroup;
 			children = (
+				BA1B5F212815CA42008A574A /* budgetize.entitlements */,
 				BA79BF8A27BC35D200C06A80 /* Services */,
 				80CA6E3E27B46F480015F1A2 /* Info.plist */,
 				BA79BF8627BC2B9B00C06A80 /* GoogleService-Info.plist */,
@@ -165,6 +169,7 @@
 			children = (
 				BA79BF8D27BC397F00C06A80 /* GIDConfigurationExtensions.swift */,
 				BA79BF8F27BC3BE700C06A80 /* OAuthService.swift */,
+				BA1B5F222815CABD008A574A /* AppleAuth.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -308,6 +313,7 @@
 				80CA6E3D27B46D9E0015F1A2 /* WelcomeView.swift in Sources */,
 				BA4EF51927B98ED800815A55 /* UserInfo.swift in Sources */,
 				80B6C21627B972D900EAC5E0 /* OnboardingView.swift in Sources */,
+				BA1B5F232815CABD008A574A /* AppleAuth.swift in Sources */,
 				BA79BF9027BC3BE700C06A80 /* OAuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,6 +443,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = budgetize/budgetize.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -470,6 +477,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = budgetize/budgetize.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
