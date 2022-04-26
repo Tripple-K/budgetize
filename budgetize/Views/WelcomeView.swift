@@ -9,6 +9,7 @@ struct WelcomeView: View {
     @ObservedObject var userRepo = UserRepository()
     
     @State var currentNonce:String?
+    @Binding var showWelcomeView: Bool
     
     var body: some View {
         VStack {
@@ -33,6 +34,7 @@ struct WelcomeView: View {
                 .foregroundColor(.white)
                 .padding(20)
                 .onTapGesture {
+                    self.showWelcomeView.toggle()
                     self.viewModel.login(with: "google.com") {
                         guard let user = Auth.auth().currentUser, let _ = user.displayName, let _ = user.email else { return }
                         userRepo.isExist(with: user.uid) { exist in
@@ -40,6 +42,7 @@ struct WelcomeView: View {
                                 userRepo.add(UserInfo(userId: user.uid, displayName: user.displayName!, email: user.email!))
                             }
                         }
+                       
                     }
             }
             
@@ -49,6 +52,7 @@ struct WelcomeView: View {
                 request.requestedScopes = [.fullName, .email]
                 request.nonce = sha256(nonce)
             }, onCompletion: { result in
+                self.showWelcomeView.toggle()
                 handleResultAuth(result)
             })
                 .frame(minHeight: 50)
@@ -96,11 +100,12 @@ struct WelcomeView: View {
                     userRepo.isExist(with: user.email!) { exist in
                         if !exist {
                             userRepo.add(UserInfo(userId: user.uid, displayName: user.displayName ?? "User", email: user.email!))
+                           
                         }
                     }
+                    
                 }
                 
-                print("\(String(describing: Auth.auth().currentUser?.uid))")
             default:
                 break
                 
@@ -110,12 +115,12 @@ struct WelcomeView: View {
         }
     }
 }
-
-struct WelcomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        WelcomeView()
-    }
-}
+//
+//struct WelcomeView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        WelcomeView()
+//    }
+//}
 
 struct DynamicAppleSignIn : View {
     @Environment(\.colorScheme) var colorScheme
