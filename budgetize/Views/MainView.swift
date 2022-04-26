@@ -2,9 +2,10 @@ import SwiftUI
 
 enum Tabs: String {
     case Accounts
-    case Home
     case Transactions
+    case Home
     case Overview
+    case Settings
 }
 
 struct MainView: View {
@@ -14,24 +15,31 @@ struct MainView: View {
             TabView(selection: $chosenTab) {
                 AccountsView()
                     .tabItem {
-                        Label("Accounts", systemImage:"1.square.fill")
+                        Label("Accounts", systemImage:"square.stack.3d.up")
                     }
                     .tag(Tabs.Accounts)
-                HomeView()
-                    .tabItem {
-                        Label("Home", systemImage:"2.square.fill")
-                    }
-                    .tag(Tabs.Home)
                 TransactionsView()
                     .tabItem {
-                        Label("Transactions", systemImage:"3.square.fill")
+                        Label("Transactions", systemImage:"list.bullet.below.rectangle")
+//                        Label("Transactions", systemImage:"cart")
                     }
                     .tag(Tabs.Transactions)
+                HomeView()
+                    .tabItem {
+                        Label("Home", systemImage:"circle.dotted")
+                            .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                    }
+                    .tag(Tabs.Home)
                 OverView()
                     .tabItem{
-                        Label("Overview", systemImage:"4.square.fill")
+                        Label("Overview", systemImage:"sum")
                     }
                     .tag(Tabs.Overview)
+                SettingsView()
+                    .tabItem{
+                        Label("Settings", systemImage: "gear")
+                    }
+                    .tag(Tabs.Settings)
             }
             .navigationBarTitle(chosenTab.rawValue, displayMode: .inline)
         }
