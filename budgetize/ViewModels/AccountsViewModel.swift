@@ -33,15 +33,4 @@ class AccountsViewModel: ObservableObject{
         }
     }
     
-    func editAccount() {
-        
-    }
-    func deleteAccount() {
-        
-    }
-    
-    func showAllAccounts() {
-        
-    }
-    
 }

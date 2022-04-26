@@ -2,11 +2,38 @@
 import SwiftUI
 import FirebaseAuth
 
+enum Mode {
+    case new
+    case edit
+}
+
+enum Action {
+    case delete
+    case done
+    case cancel
+}
+
 struct AccountEditView: View {
     
     @StateObject var viewModel = AccountViewModel()
-
     @Environment(\.presentationMode) var presentationMode
+    @State var presentActionSheet = false
+    
+    var mode: Mode = .new
+    var completionHandler: ((Result<Action, Error>) -> Void)?
+    
+    var cancelButton: some View {
+        Button(action: { self.handleCancelTapped() }) {
+            Text("Cancel")
+        }
+    }
+    
+    var createButton: some View {
+        Button(action: { self.handleCreateTapped() }) {
+            Text(mode == .new ? "Create" : "Save")
+        }
+        .disabled(!viewModel.modified)
+    }
     
     var body: some View {
         NavigationView {
@@ -30,16 +57,28 @@ struct AccountEditView: View {
                 Section(header: Text("Balance")) {
                     TextField("Balance", value: $viewModel.account.balance, formatter: NumberFormatter())
                 }
+                
+                if mode == .edit {
+                    Section {
+                        Button("Delete book") { self.presentActionSheet.toggle() }
+                            .foregroundColor(.red)
+                    }
+                }
             }
-            .navigationBarTitle("New account", displayMode: .inline)
+            .navigationTitle(mode == .new ? "New account" : viewModel.account.name)
+            .navigationBarTitleDisplayMode(mode == .new ? .inline : .large)
             .navigationBarItems(
-                leading: Button(action: { handleCancelTapped() }, label: {
-                    Text("Cancel")
-                }),
-                trailing: Button(action: { handleCreateTapped() }, label: {
-                    Text("Create")
-                })
+                leading: cancelButton,
+                trailing: createButton
             )
+            .actionSheet(isPresented: $presentActionSheet) {
+                ActionSheet(title: Text("Are you sure?"),
+                            buttons: [
+                                .destructive(Text("Delete book"),
+                                             action: { self.handleDeleteTapped() }),
+                                .cancel()
+                            ])
+            }
         }
     }
     
@@ -48,8 +87,14 @@ struct AccountEditView: View {
     }
     
     func handleCreateTapped() {
-        viewModel.save()
+        viewModel.handleCreateTapped()
         dismiss()
+    }
+    
+    func handleDeleteTapped() {
+        viewModel.handleDeleteTapped()
+        self.dismiss()
+        self.completionHandler?(.success(.delete))
     }
     
     func dismiss() {
