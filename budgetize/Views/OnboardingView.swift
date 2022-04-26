@@ -36,7 +36,13 @@ struct OnboardingView: View {
 //        } else {
 //            MainView()
 //        }
-        MainView()
+        if !firstContact {
+            ZStack {
+                MainView()
+                SplashScreen()
+                
+            }
+        }
     }
 }
 

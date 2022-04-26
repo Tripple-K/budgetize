@@ -57,7 +57,6 @@ struct WelcomeView: View {
             })
                 .frame(minHeight: 50)
                 .cornerRadius(10)
-                .padding()
         }
     }
     
@@ -113,9 +112,10 @@ struct WelcomeView: View {
         default:
             break
         }
+            
     }
 }
-//
+
 //struct WelcomeView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        WelcomeView()

@@ -10,6 +10,7 @@ enum Tabs: String {
 
 struct MainView: View {
     @State var chosenTab: Tabs = .Home
+    @State var endAnimation = false
     var body: some View {
         NavigationView {
             TabView(selection: $chosenTab) {
@@ -21,7 +22,7 @@ struct MainView: View {
                 TransactionsView()
                     .tabItem {
                         Label("Transactions", systemImage:"list.bullet.below.rectangle")
-//                        Label("Transactions", systemImage:"cart")
+                        //                        Label("Transactions", systemImage:"cart")
                     }
                     .tag(Tabs.Transactions)
                 HomeView()
@@ -41,12 +42,19 @@ struct MainView: View {
                     }
                     .tag(Tabs.Settings)
             }
-            .navigationBarTitle(chosenTab.rawValue, displayMode: .inline)
+            
+            .offset(y: endAnimation ? -5 : 470)
         }
-        
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                withAnimation(.spring()){
+                    endAnimation.toggle()
+                }
+            }
+        }
     }
 }
-
+        //
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
