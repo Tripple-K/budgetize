@@ -4,7 +4,9 @@ import FirebaseAuth
 
 struct AccountsView: View {
     
-    @ObservedObject private var viewModel = AccountViewModel()
+    @ObservedObject private var viewModel = AccountsViewModel()
+    
+    @State private var presentAddNewAccountScreen = false
     
     var body: some View {
         VStack {
@@ -21,9 +23,12 @@ struct AccountsView: View {
                     Text(String("\(account.currency)"))
                 }
             }
-            Button("Add account", action: addAccount)
+            Button(action: { presentAddNewAccountScreen.toggle() }, label: { Text("Add account") } )
                 .padding(11.0)
             Spacer()
+        }
+        .sheet(isPresented: $presentAddNewAccountScreen) {
+            AccountEditView()
         }
     }
 }

@@ -1,12 +1,10 @@
-import FirebaseFirestore
-import FirebaseFirestoreSwift
+import Firebase
 import FirebaseAuth
-import Combine
+import Foundation
 
-class AccountViewModel: ObservableObject{
-    @Published var accounts = [Account]()
+class AccountViewModel: ObservableObject {
+    @Published var account: Account = Account(userId: "", color: "", type: .debitCard, currency: .usd, name: "", balance: 0)
     
-    private let path: String = "accounts"
     private let store = Firestore.firestore()
     
     private var userId = ""
@@ -14,44 +12,20 @@ class AccountViewModel: ObservableObject{
     init () {
         if let userId = Auth.auth().currentUser?.uid {
             self.userId = userId
-            self.getAccounts()
         }
     }
-    
-    var accountId = ""
     
     func createAccount(_ account: Account) {
         do {
-            var newAccount = account
-            newAccount.id = accountId
+            self.account.userId = userId
+            let _ = try store.collection("accounts").addDocument(from: self.account)
+        } catch {
+            print(error)
         }
         
     }
     
-    func getAccounts() {
-        store.collection("accounts")
-            .whereField("userId", isEqualTo: userId)
-            .addSnapshotListener { (querySnapshot, error) in
-            guard let accounts = querySnapshot?.documents else {
-                print("No accounts")
-                return
-            }
-            
-            self.accounts = accounts.compactMap { (queryDocumentSnapshot) -> Account? in
-                return try! queryDocumentSnapshot.data(as: Account.self)
-            }
-        }
+    func save() {
+        createAccount(account)
     }
-    
-    func editAccount() {
-        
-    }
-    func deleteAccount() {
-        
-    }
-    
-    func showAllAccounts() {
-        
-    }
-    
 }
