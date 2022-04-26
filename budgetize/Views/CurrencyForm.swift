@@ -11,7 +11,6 @@ struct CurrencyForm: View {
                 ForEach(CurrencyType.allCases, id: \.self)  { currency in
                     Text(currency.rawValue)
                         .tag(currency)
-                    
                 }
             }.pickerStyle(WheelPickerStyle())
         }
@@ -25,5 +24,14 @@ struct CurrencyForm_Previews: PreviewProvider {
 }
 
 enum CurrencyType: String, Equatable, CaseIterable, Codable {
-    case uah, euro, usd
+    case uah, eur, usd
+    
+    func getIconName() -> String {
+        switch self {
+        case .uah: return "hryvniasign.circle"
+        case .eur: return "eurosign.circle"
+        case .usd: return "dollarsign.circle"
+        }
+    }
 }
+

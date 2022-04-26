@@ -34,7 +34,7 @@ struct AccountDetailsView: View {
                         .font(.title2)
                     Spacer()
                     Text(String(format: "%.2f", account.balance))
-                    Image(systemName: account.currency.rawValue)
+                    Image(systemName: account.currency.getIconName())
                 }
                 HStack {
                     Text("Account type")
