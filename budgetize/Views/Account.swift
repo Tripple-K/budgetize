@@ -5,9 +5,10 @@ struct Account: Identifiable, Codable {
     @DocumentID var id: String?
     var userId: String
     var color: String
-    var accountType: AccountType
+    var type: AccountType
     var currency: CurrencyType
     var name: String
+    var balance: Float
 }
 
 
