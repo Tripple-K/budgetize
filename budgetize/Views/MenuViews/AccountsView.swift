@@ -13,11 +13,11 @@ struct AccountsView: View {
                     VStack(alignment: .leading) {
                         Text(account.name)
                             .font(.headline)
-                        Text(String("\(account.type)"))
+                        Text("\(account.type.rawValue)")
                             .font(.subheadline)
                     }
                     Spacer()
-                    Text(String("\(account.balance)"))
+                    Text(String(format: "%.2f", account.balance))
                     Text(String("\(account.currency)"))
                 }
             }

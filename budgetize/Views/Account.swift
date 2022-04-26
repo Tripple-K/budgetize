@@ -8,7 +8,7 @@ struct Account: Identifiable, Codable {
     var type: AccountType
     var currency: CurrencyType
     var name: String
-    var balance: Float
+    var balance: Double
 }
 
 
