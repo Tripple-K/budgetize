@@ -4,8 +4,7 @@ import FirebaseAuth
 
 struct AccountsView: View {
     
-    @ObservedObject private var viewModel = AccountsViewModel()
-    var userId = Auth.auth().currentUser?.uid
+    @ObservedObject private var viewModel = AccountViewModel()
     
     var body: some View {
         VStack {
@@ -21,16 +20,10 @@ struct AccountsView: View {
                     Text(String("\(account.balance)"))
                     Text(String("\(account.currency)"))
                 }
-                    
-                    
-                }
+            }
             Button("Add account", action: addAccount)
                 .padding(11.0)
             Spacer()
-        }
-        .onAppear() {
-            self.viewModel.showAccounts(userId ?? " ")
-            print(userId)
         }
     }
 }
