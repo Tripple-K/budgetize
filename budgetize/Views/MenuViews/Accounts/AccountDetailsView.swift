@@ -48,7 +48,7 @@ struct AccountDetailsView: View {
             self.presentEditAccountSheet.toggle()
         })
         .sheet(isPresented: self.$presentEditAccountSheet) {
-            AccountEditView(viewModel: AccountViewModel(account: account), mode: .edit) { result in
+            AccountEditView(viewModel: AccountViewModel(account), mode: .edit) { result in
                 if case .success(let action) = result, action == .delete {
                     self.presentationMode.wrappedValue.dismiss()
                 }
@@ -60,7 +60,7 @@ struct AccountDetailsView: View {
 
 struct AccountDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        let account = Account(userId: "", color: "black", type: .debitCard, currency: .uah, name: "monobank black", balance: 27353)
+        let account = Account()
         AccountDetailsView(account: account)
     }
 }

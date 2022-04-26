@@ -9,6 +9,15 @@ struct Account: Identifiable, Codable {
     var currency: CurrencyType
     var name: String
     var balance: Double
+    
+    init () {
+        self.userId = ""
+        self.color = ""
+        self.type = .saving
+        self.currency = .eur
+        self.name = ""
+        self.balance = 0
+    }
 }
 
 

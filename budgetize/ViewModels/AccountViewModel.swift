@@ -8,73 +8,57 @@ class AccountViewModel: ObservableObject {
     
     private var userId = ""
     
+    private let store = Firestore.firestore()
+    
     private var cancellables = Set<AnyCancellable>()
     
-    init(account: Account = Account(userId: "", color: "", type: .debitCard, currency: .usd, name: "", balance: 0)) {
+    init() {
+        self.account = Account()
+        self.$account
+            .dropFirst()
+            .sink { [weak self] account in
+                self?.modified = true
+            }
+            .store(in: &self.cancellables)
+    }
+    
+    convenience init (_ account: Account) {
+        self.init()
+        
         self.account = account
         if let userId = Auth.auth().currentUser?.uid {
             self.userId = userId
         }
-        
-        self.$account
-          .dropFirst()
-          .sink { [weak self] account in
-            self?.modified = true
-          }
-          .store(in: &self.cancellables)
-      }
+    }
     
-    private let store = Firestore.firestore()
-    
-    func addAccount(_ account: Account) {
+    func addAccount() {
         do {
-            self.account.userId = userId
-            let _ = try store.collection("accounts").addDocument(from: self.account)
+            account.userId = Auth.auth().currentUser?.uid ?? ""
+            let _ = try store.collection("accounts").addDocument(from: account)
         } catch {
             print(error)
         }
-        
     }
     
-
-    
-    
-    private func updateAccount(_ account: Account) {
-        if let documentId = account.id {
-          do {
-            try store.collection("accounts").document(documentId).setData(from: account)
-          }
-          catch {
-            print(error)
-          }
-        }
-      }
-    
-    private func updateOrAddAccount() {
-        if let _ = account.id {
-          self.updateAccount(self.account)
-        }
-        else {
-          addAccount(account)
-        }
-      }
-      
-      private func deleteAccount() {
-        if let documentId = account.id {
-            store.collection("accounts").document(documentId).delete { error in
-            if let error = error {
-              print(error.localizedDescription)
+    func updateAccount() {
+        if let id = account.id {
+            do {
+                try store.collection("accounts").document(id).setData(from: account)
             }
-          }
+            catch {
+                print(error)
+            }
         }
-      }
+    }
     
+    func deleteAccount() {
+        if let id = account.id {
+            store.collection("accounts").document(id).delete { error in
+                if let error = error {
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
     
-    func handleCreateTapped() {
-        self.updateOrAddAccount()
-      }
-      
-      func handleDeleteTapped() {
-        self.deleteAccount()
-      }
 }

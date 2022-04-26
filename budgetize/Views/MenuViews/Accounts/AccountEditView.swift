@@ -60,7 +60,7 @@ struct AccountEditView: View {
                 
                 if mode == .edit {
                     Section {
-                        Button("Delete book") { self.presentActionSheet.toggle() }
+                        Button("Delete account") { self.presentActionSheet.toggle() }
                             .foregroundColor(.red)
                     }
                 }
@@ -74,7 +74,7 @@ struct AccountEditView: View {
             .actionSheet(isPresented: $presentActionSheet) {
                 ActionSheet(title: Text("Are you sure?"),
                             buttons: [
-                                .destructive(Text("Delete book"),
+                                .destructive(Text("Delete account"),
                                              action: { self.handleDeleteTapped() }),
                                 .cancel()
                             ])
@@ -87,12 +87,19 @@ struct AccountEditView: View {
     }
     
     func handleCreateTapped() {
-        viewModel.handleCreateTapped()
+        
+        switch mode {
+        case .new:
+            viewModel.addAccount()
+        case .edit:
+            viewModel.updateAccount()
+        }
+       
         dismiss()
     }
     
     func handleDeleteTapped() {
-        viewModel.handleDeleteTapped()
+        viewModel.deleteAccount()
         self.dismiss()
         self.completionHandler?(.success(.delete))
     }
