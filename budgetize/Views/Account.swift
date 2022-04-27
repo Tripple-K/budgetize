@@ -5,9 +5,9 @@ struct Account: Identifiable, Codable {
     @DocumentID var id: String?
     var userId: String = ""
     var color: String = ""
-    var type: AccountType = .saving
+    var type: AccountType = .debitCard
     var currency: CurrencyType = .usd
-    var name: String = "Account"
+    var name: String = ""
     var balance: Double = 0
 }
 

@@ -3,43 +3,40 @@ import SwiftUI
 
 struct AccountForm: View {
     
-//    var account = Account()
-    
-    @State var accountName = ""
-    @State var accountCurrency: CurrencyType = .usd
-    var accountType: AccountType = .debitCard
-//    @State var color
-    
+    @StateObject var viewModel: AccountViewModel
     
     var body: some View {
-        VStack {
-            Text("Let's create your first account!")
-                .font(.largeTitle.bold())
-                .padding()
-            HStack {
-                Text("Name")
-                TextField("Name", text:$accountName)
+        Form {
+            Section(header: Text("Account")) {
+                TextField("Name", text: $viewModel.account.name)
+                Picker("Account type", selection: $viewModel.account.type) {
+                    ForEach(AccountType.allCases, id: \.self)  { type in
+                        Text(type.rawValue)
+                            .tag(type)
+                    }
+                }.pickerStyle(SegmentedPickerStyle())
+                Picker("Currency", selection: $viewModel.account.currency) {
+                    ForEach(CurrencyType.allCases, id: \.self)  { currency in
+                        Text(currency.rawValue)
+                            .tag(currency)
+                    }
+                }.pickerStyle(SegmentedPickerStyle())
+                
             }
-            Text("What's account currency?")
-            Picker("What's your account currency?", selection: $accountCurrency) {
-                ForEach(CurrencyType.allCases, id: \.self)  { currency in
-                    Text(currency.rawValue)
-                        .tag(currency)
-
-                }
-            }.pickerStyle(WheelPickerStyle())
-//            ColorPicker("Choose account color", selection: <#T##Binding<CGColor>#>)
-//
-            
-            Spacer()
-            
+            Section(header: Text("Balance")) {
+                TextField("Balance", value: $viewModel.account.balance, formatter: NumberFormatter())
+            }
         }
+        
     }
 }
+
+
 
 struct AccountForm_Previews: PreviewProvider {
     static var previews: some View {
-        AccountForm()
+        var viewModel = AccountViewModel()
+        AccountForm(viewModel: viewModel)
     }
 }
- 
+
