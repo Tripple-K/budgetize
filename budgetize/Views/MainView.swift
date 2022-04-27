@@ -14,6 +14,8 @@ struct MainView: View {
     
     let frame: CGSize = UIScreen.main.bounds.size
     
+    @AppStorage("mainCurrency") var mainCurrency: CurrencyType = .usd
+    
     var body: some View {
         NavigationView {
             TabView(selection: $chosenTab) {
@@ -44,7 +46,7 @@ struct MainView: View {
                     }
                     .tag(Tabs.Settings)
             }
-            .navigationTitle(endAnimation ? chosenTab.rawValue : "" )
+            .navigationTitle(chosenTab.rawValue == "Accounts" ? "0.0 \(mainCurrency.rawValue)" : "")
             .offset(y: endAnimation ? 0 : frame.height)
         }
     }
