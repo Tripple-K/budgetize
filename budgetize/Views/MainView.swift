@@ -10,7 +10,10 @@ enum Tabs: String {
 
 struct MainView: View {
     @State var chosenTab: Tabs = .Home
-    @State var endAnimation = false
+    @Binding var endAnimation: Bool
+    
+    let frame: CGSize = UIScreen.main.bounds.size
+    
     var body: some View {
         NavigationView {
             TabView(selection: $chosenTab) {
@@ -22,13 +25,12 @@ struct MainView: View {
                 TransactionsView()
                     .tabItem {
                         Label("Transactions", systemImage:"list.bullet.below.rectangle")
-                        //                        Label("Transactions", systemImage:"cart")
                     }
                     .tag(Tabs.Transactions)
                 HomeView()
                     .tabItem {
                         Label("Home", systemImage:"circle.dotted")
-                            .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+
                     }
                     .tag(Tabs.Home)
                 OverView()
@@ -42,21 +44,9 @@ struct MainView: View {
                     }
                     .tag(Tabs.Settings)
             }
-            
-            .offset(y: endAnimation ? -5 : 470)
-        }
-        .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                withAnimation(.spring()){
-                    endAnimation.toggle()
-                }
-            }
+            .navigationTitle(endAnimation ? chosenTab.rawValue : "" )
+            .offset(y: endAnimation ? 0 : frame.height)
         }
     }
 }
-        //
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
-    }
-}
+

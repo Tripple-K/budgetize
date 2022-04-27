@@ -9,6 +9,10 @@ struct OnboardingView: View {
     
     @State var selectedSubveiw = 0
     let lastSubview = 1
+    let frame = UIScreen.main.bounds
+    
+    @State var endAnimation = false
+    @State var textAnimation = false
 
     var body: some View {
 //        if firstContact {
@@ -36,11 +40,19 @@ struct OnboardingView: View {
 //        } else {
 //            MainView()
 //        }
-        if !firstContact {
-            ZStack {
-                MainView()
-                SplashScreen()
+        ZStack {
+            MainView(endAnimation: $endAnimation)
+                .frame(width: frame.width, height: frame.height)
+            SplashScreen(textAnimation: $textAnimation, endAnimation: $endAnimation)
+        }.onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                withAnimation(.spring()) {
+                    textAnimation.toggle()
+                }
                 
+                withAnimation(Animation.interactiveSpring(response: 0.6, dampingFraction: 1, blendDuration: 1)) {
+                    endAnimation.toggle()
+                }
             }
         }
     }

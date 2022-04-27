@@ -3,8 +3,10 @@ import SwiftUI
 
 struct SplashScreen: View {
     
-    @State var textAnimation = false
-    @State var endAnimation = false
+    @Binding var textAnimation: Bool
+    @Binding var endAnimation: Bool
+    
+    let frame: CGSize = UIScreen.main.bounds.size
     
     var body: some View {
         VStack {
@@ -16,28 +18,13 @@ struct SplashScreen: View {
                     .font(.largeTitle)
                     .multilineTextAlignment(.center)
                     .scaleEffect(endAnimation ? 0.75 : 1)
-                    .offset(y: textAnimation ? -5 : 470)
+                    .offset(y: textAnimation ? -frame.height / 2 : frame.height / 2)
             }
             .frame(height: endAnimation ? 60 : nil)
             .zIndex(1)
         }
         .frame(maxHeight: .infinity, alignment: .top)
-        .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                withAnimation(.spring()) {
-                    textAnimation.toggle()
-                }
-                
-                withAnimation(Animation.interactiveSpring(response: 0.6, dampingFraction: 1, blendDuration: 1)) {
-                    endAnimation.toggle()
-                }
-            }
-    }
     }
 }
 
-struct SplashScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        SplashScreen()
-    }
-}
+

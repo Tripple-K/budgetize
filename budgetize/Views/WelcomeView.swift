@@ -34,14 +34,16 @@ struct WelcomeView: View {
                 .foregroundColor(.white)
                 .padding(20)
                 .onTapGesture {
-                    self.showWelcomeView.toggle()
+                  
                     self.viewModel.login(with: "google.com") {
                         guard let user = Auth.auth().currentUser, let _ = user.displayName, let _ = user.email else { return }
+                        
                         userRepo.isExist(with: user.uid) { exist in
                             if !exist {
                                 userRepo.add(UserInfo(userId: user.uid, displayName: user.displayName!, email: user.email!))
                             }
                         }
+                        self.showWelcomeView.toggle()
                        
                     }
             }
@@ -52,7 +54,7 @@ struct WelcomeView: View {
                 request.requestedScopes = [.fullName, .email]
                 request.nonce = sha256(nonce)
             }, onCompletion: { result in
-                self.showWelcomeView.toggle()
+               
                 handleResultAuth(result)
             })
                 .frame(minHeight: 50)
@@ -102,7 +104,7 @@ struct WelcomeView: View {
                            
                         }
                     }
-                    
+                    self.showWelcomeView.toggle()
                 }
                 
             default:
