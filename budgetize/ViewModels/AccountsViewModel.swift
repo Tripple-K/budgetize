@@ -18,6 +18,14 @@ class AccountsViewModel: ObservableObject{
         }
     }
     
+    func calcucateBalance(accounts : [Account]) -> Double {
+        var balance: Double = 0
+        accounts.forEach { account in
+            balance += account.balance
+        }
+        return balance
+    }
+    
     func getAccounts() {
         store.collection("accounts")
             .whereField("userId", isEqualTo: userId)

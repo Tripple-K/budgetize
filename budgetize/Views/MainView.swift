@@ -9,6 +9,7 @@ enum Tabs: String {
 }
 
 struct MainView: View {
+    @State var viewModel = AccountsViewModel()
     @State var chosenTab: Tabs = .Home
     @Binding var endAnimation: Bool
     
@@ -46,7 +47,7 @@ struct MainView: View {
                     }
                     .tag(Tabs.Settings)
             }
-            .navigationTitle(chosenTab.rawValue == "Accounts" ? "0.0 \(mainCurrency.rawValue)" : "")
+            .navigationTitle(chosenTab.rawValue == "Accounts" ? String("\(viewModel.calcucateBalance(accounts: viewModel.accounts)) \(mainCurrency.rawValue)") : "")
             .offset(y: endAnimation ? 0 : frame.height)
         }
     }
