@@ -2,8 +2,8 @@ import Firebase
 import FirebaseAuth
 import Combine
 
-class AccountViewModel: ObservableObject {
-    @Published var account: Account
+class TransactionViewModel: ObservableObject {
+    @Published var transaction: Transaction
     @Published var modified = false
     
     private var userId = ""
@@ -12,46 +12,46 @@ class AccountViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     
     init() {
-        self.account = Account()
-        self.$account
+        self.transaction = Transaction()
+        self.$transaction
             .dropFirst()
-            .sink { [weak self] account in
+            .sink { [weak self] transaction in
                 self?.modified = true
             }
             .store(in: &self.cancellables)
     }
     
-    convenience init (_ account: Account) {
+    convenience init(_ transaction: Transaction) {
         self.init()
         
-        self.account = account
+        self.transaction = transaction
         if let userId = Auth.auth().currentUser?.uid {
             self.userId = userId
         }
     }
     
-    func addAccount() {
+    func addTransaction() {
         do {
-            account.userId = Auth.auth().currentUser?.uid ?? ""
-            let _ = try store.collection("accounts").addDocument(from: account)
+            transaction.userId = Auth.auth().currentUser?.uid ?? ""
+            let _ = try store.collection("transactions").addDocument(from: transaction)
         } catch {
             print(error)
         }
     }
     
-    func updateAccount() {
-        if let id = account.id {
+    func updateTransaction() {
+        if let id = transaction.id {
             do {
-                try store.collection("accounts").document(id).setData(from: account)
+                try store.collection("transactions").document(id).setData(from: transaction)
             } catch {
                 print(error)
             }
         }
     }
     
-    func deleteAccount() {
-        if let id = account.id {
-            store.collection("accounts").document(id).delete { error in
+    func deleteTransaction() {
+        if let id = transaction.id {
+            store.collection("transactions").document(id).delete { error in
                 if let error = error {
                     print(error.localizedDescription)
                 }

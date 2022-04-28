@@ -27,7 +27,9 @@ struct AccountsView: View {
             List(viewModel.accounts) { account in
                 accountRowView(account: account)
             }
-            Button(action: { presentAddAccountSheet.toggle() }, label: { Text("Add account") } )
+            Button(action: { presentAddAccountSheet.toggle() }, label: {
+                BrandButton(text: "+ Add account")
+            })
                 .padding(11.0)
             Spacer()
         }
@@ -41,8 +43,4 @@ struct AccountsView_Previews: PreviewProvider {
     static var previews: some View {
         AccountsView()
     }
-}
-
-func addAccount() {
-    
 }

@@ -35,13 +35,8 @@ struct OnboardingView: View {
                                 selectedSubveiw += 1
                             }
                         }, label: {
-                            Text("\(selectedSubveiw == lastSubview ? "Finish" : "Next" )")
-                                .font(.title)
-                                .foregroundColor(Color.white)
-                                .padding(.horizontal, 40.0)
-                                .padding(.vertical, 6.0)
-                                .background(Color(.systemIndigo))
-                                .cornerRadius(17)
+                            BrandButton(text: "\(selectedSubveiw == lastSubview ? "Finish" : "Next" )")
+                                
                         })
                         .padding()
                     }

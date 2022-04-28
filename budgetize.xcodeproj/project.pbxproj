@@ -8,15 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		804909C727B6C7C900034FB1 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804909C627B6C7C900034FB1 /* SplashScreen.swift */; };
+		807FE83A281ADF9C008B2C03 /* TransactionEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807FE839281ADF9C008B2C03 /* TransactionEditView.swift */; };
+		807FE83C281AE934008B2C03 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807FE83B281AE934008B2C03 /* Transaction.swift */; };
 		808974F228183E5D00F3BDA7 /* AccountEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808974F128183E5D00F3BDA7 /* AccountEditView.swift */; };
 		808974F42818401700F3BDA7 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808974F32818401700F3BDA7 /* AccountViewModel.swift */; };
 		808974F6281869AE00F3BDA7 /* AccountDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808974F5281869AE00F3BDA7 /* AccountDetailsView.swift */; };
 		808974F82818794B00F3BDA7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808974F72818794B00F3BDA7 /* SettingsView.swift */; };
+		80A404EC281B035A0032330B /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A404EB281B035A0032330B /* TransactionsViewModel.swift */; };
+		80A404EE281B08C90032330B /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A404ED281B08C90032330B /* TransactionViewModel.swift */; };
+		80A404F0281B16470032330B /* TransactionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A404EF281B16470032330B /* TransactionRecord.swift */; };
 		80B6C21627B972D900EAC5E0 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B6C21527B972D900EAC5E0 /* OnboardingView.swift */; };
 		80CA6E3D27B46D9E0015F1A2 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA6E3C27B46D9E0015F1A2 /* WelcomeView.swift */; };
 		80CA6E4027B46FCE0015F1A2 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA6E3F27B46FCE0015F1A2 /* AuthViewModel.swift */; };
 		80CA6E4227B476710015F1A2 /* GoogleSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA6E4127B476710015F1A2 /* GoogleSignInButton.swift */; };
 		80CA6E4827B47CD60015F1A2 /* InitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA6E4727B47CD60015F1A2 /* InitView.swift */; };
+		80CBFB34281AFC15000B949E /* BrandButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CBFB33281AFC15000B949E /* BrandButton.swift */; };
 		BA1B5F232815CABD008A574A /* AppleAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1B5F222815CABD008A574A /* AppleAuth.swift */; };
 		BA4EF51327B986D500815A55 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EF51227B986D500815A55 /* MainView.swift */; };
 		BA4EF51527B98A4400815A55 /* CurrencyForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EF51427B98A4400815A55 /* CurrencyForm.swift */; };
@@ -42,16 +48,22 @@
 		1098F9AE17D36723C489CF4E /* Pods-budgetize.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-budgetize.release.xcconfig"; path = "Target Support Files/Pods-budgetize/Pods-budgetize.release.xcconfig"; sourceTree = "<group>"; };
 		3ABBD62836E6C589AC113D75 /* Pods_budgetize.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_budgetize.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		804909C627B6C7C900034FB1 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		807FE839281ADF9C008B2C03 /* TransactionEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionEditView.swift; sourceTree = "<group>"; };
+		807FE83B281AE934008B2C03 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		808974F128183E5D00F3BDA7 /* AccountEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountEditView.swift; sourceTree = "<group>"; };
 		808974F32818401700F3BDA7 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		808974F5281869AE00F3BDA7 /* AccountDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsView.swift; sourceTree = "<group>"; };
 		808974F72818794B00F3BDA7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		80A404EB281B035A0032330B /* TransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
+		80A404ED281B08C90032330B /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
+		80A404EF281B16470032330B /* TransactionRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRecord.swift; sourceTree = "<group>"; };
 		80B6C21527B972D900EAC5E0 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		80CA6E3C27B46D9E0015F1A2 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		80CA6E3E27B46F480015F1A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		80CA6E3F27B46FCE0015F1A2 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		80CA6E4127B476710015F1A2 /* GoogleSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInButton.swift; sourceTree = "<group>"; };
 		80CA6E4727B47CD60015F1A2 /* InitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitView.swift; sourceTree = "<group>"; };
+		80CBFB33281AFC15000B949E /* BrandButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandButton.swift; sourceTree = "<group>"; };
 		BA1B5F212815CA42008A574A /* budgetize.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = budgetize.entitlements; sourceTree = "<group>"; };
 		BA1B5F222815CABD008A574A /* AppleAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuth.swift; sourceTree = "<group>"; };
 		BA4EF51227B986D500815A55 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -92,6 +104,7 @@
 			children = (
 				BA4EF51827B98ED800815A55 /* UserInfo.swift */,
 				BA4EF51A27B98EE800815A55 /* Account.swift */,
+				807FE83B281AE934008B2C03 /* Transaction.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -108,6 +121,8 @@
 				BA4EF51227B986D500815A55 /* MainView.swift */,
 				BA4EF51427B98A4400815A55 /* CurrencyForm.swift */,
 				BA4EF51627B98AF100815A55 /* AccountForm.swift */,
+				80CBFB33281AFC15000B949E /* BrandButton.swift */,
+				80A404EF281B16470032330B /* TransactionRecord.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -118,8 +133,19 @@
 				BA5EDBFB281830A7003365DD /* AccountsViewModel.swift */,
 				80CA6E3F27B46FCE0015F1A2 /* AuthViewModel.swift */,
 				808974F32818401700F3BDA7 /* AccountViewModel.swift */,
+				80A404EB281B035A0032330B /* TransactionsViewModel.swift */,
+				80A404ED281B08C90032330B /* TransactionViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		807FE838281ADF79008B2C03 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				BA5EDBF328183048003365DD /* TransactionsView.swift */,
+				807FE839281ADF9C008B2C03 /* TransactionEditView.swift */,
+			);
+			path = Transactions;
 			sourceTree = "<group>";
 		};
 		808974F028183E4200F3BDA7 /* Accounts */ = {
@@ -151,10 +177,10 @@
 		BA5EDBF028183047003365DD /* MenuViews */ = {
 			isa = PBXGroup;
 			children = (
+				807FE838281ADF79008B2C03 /* Transactions */,
 				808974F028183E4200F3BDA7 /* Accounts */,
 				BA5EDBF128183047003365DD /* HomeView.swift */,
 				BA5EDBF228183048003365DD /* OverView.swift */,
-				BA5EDBF328183048003365DD /* TransactionsView.swift */,
 				808974F72818794B00F3BDA7 /* SettingsView.swift */,
 			);
 			path = MenuViews;
@@ -341,9 +367,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA5EDBF828183048003365DD /* AccountsView.swift in Sources */,
+				807FE83A281ADF9C008B2C03 /* TransactionEditView.swift in Sources */,
 				BA4EF51E27B9958E00815A55 /* UserRepository.swift in Sources */,
+				80CBFB34281AFC15000B949E /* BrandButton.swift in Sources */,
 				80CA6E4227B476710015F1A2 /* GoogleSignInButton.swift in Sources */,
 				BA4EF51327B986D500815A55 /* MainView.swift in Sources */,
+				80A404EC281B035A0032330B /* TransactionsViewModel.swift in Sources */,
 				BA79BF8E27BC397F00C06A80 /* GIDConfigurationExtensions.swift in Sources */,
 				80CA6E4027B46FCE0015F1A2 /* AuthViewModel.swift in Sources */,
 				BA5EDBF528183048003365DD /* HomeView.swift in Sources */,
@@ -356,6 +385,7 @@
 				BA5EDBF728183048003365DD /* TransactionsView.swift in Sources */,
 				80CA6E4827B47CD60015F1A2 /* InitView.swift in Sources */,
 				808974F82818794B00F3BDA7 /* SettingsView.swift in Sources */,
+				807FE83C281AE934008B2C03 /* Transaction.swift in Sources */,
 				BA64372227B42B610078BA6A /* budgetizeApp.swift in Sources */,
 				80CA6E3D27B46D9E0015F1A2 /* WelcomeView.swift in Sources */,
 				808974F6281869AE00F3BDA7 /* AccountDetailsView.swift in Sources */,
@@ -365,6 +395,8 @@
 				80B6C21627B972D900EAC5E0 /* OnboardingView.swift in Sources */,
 				BA1B5F232815CABD008A574A /* AppleAuth.swift in Sources */,
 				BA79BF9027BC3BE700C06A80 /* OAuthService.swift in Sources */,
+				80A404F0281B16470032330B /* TransactionRecord.swift in Sources */,
+				80A404EE281B08C90032330B /* TransactionViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
