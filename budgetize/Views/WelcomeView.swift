@@ -7,6 +7,7 @@ import CryptoKit
 struct WelcomeView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     @ObservedObject var userRepo = UserRepository()
+    @AppStorage("firstContact") var firstContact = false
     
     @State var currentNonce:String?
     @Binding var showWelcomeView: Bool
@@ -41,6 +42,7 @@ struct WelcomeView: View {
                         userRepo.isExist(with: user.uid) { exist in
                             if !exist {
                                 userRepo.add(UserInfo(userId: user.uid, displayName: user.displayName!, email: user.email!))
+                                firstContact = true
                             }
                         }
                         self.showWelcomeView.toggle()
@@ -54,7 +56,6 @@ struct WelcomeView: View {
                 request.requestedScopes = [.fullName, .email]
                 request.nonce = sha256(nonce)
             }, onCompletion: { result in
-               
                 handleResultAuth(result)
             })
                 .frame(minHeight: 50)
@@ -101,7 +102,7 @@ struct WelcomeView: View {
                     userRepo.isExist(with: user.email!) { exist in
                         if !exist {
                             userRepo.add(UserInfo(userId: user.uid, displayName: user.displayName ?? "User", email: user.email!))
-                           
+                            firstContact = true
                         }
                     }
                     self.showWelcomeView.toggle()

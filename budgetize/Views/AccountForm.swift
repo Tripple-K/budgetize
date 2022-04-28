@@ -35,7 +35,7 @@ struct AccountForm: View {
 
 struct AccountForm_Previews: PreviewProvider {
     static var previews: some View {
-        var viewModel = AccountViewModel()
+        let viewModel = AccountViewModel()
         AccountForm(viewModel: viewModel)
     }
 }

@@ -6,7 +6,7 @@ import Firebase
 struct OnboardingView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     @StateObject var accountViewModel = AccountViewModel()
-    @AppStorage("firstContact") var firstContact = true
+    @AppStorage("firstContact") var firstContact = false
     
     @State var selectedSubveiw = 0
     let lastSubview = 1
@@ -14,7 +14,7 @@ struct OnboardingView: View {
     
     @State var endAnimation = false
     @State var textAnimation = false
-
+    
     var body: some View {
         if firstContact {
             VStack {
@@ -22,9 +22,8 @@ struct OnboardingView: View {
                     TabView(selection: $selectedSubveiw) {
                         CurrencyForm().tag(0)
                         AccountForm(viewModel: accountViewModel).tag(1)
-                            
+                        
                     }
-                    .ignoresSafeArea()
                     .tabViewStyle(PageTabViewStyle())
                     VStack {
                         Spacer()
@@ -48,7 +47,9 @@ struct OnboardingView: View {
                     }
                 }
                 
-            }.onAppear()
+            }
+            .onAppear()
+            .ignoresSafeArea()
         } else {
             ZStack {
                 MainView(endAnimation: $endAnimation)

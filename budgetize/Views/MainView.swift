@@ -17,6 +17,13 @@ struct MainView: View {
     
     @AppStorage("mainCurrency") var mainCurrency: CurrencyType = .usd
     
+    var navigationTitle: String {
+        if chosenTab != .Settings {
+            return String("\(viewModel.balance) \(mainCurrency.rawValue)")
+        }
+        return "Settings"
+    }
+    
     var body: some View {
         NavigationView {
             TabView(selection: $chosenTab) {
@@ -47,7 +54,7 @@ struct MainView: View {
                     }
                     .tag(Tabs.Settings)
             }
-            .navigationTitle(chosenTab.rawValue == "Accounts" ? String("\(viewModel.calcucateBalance(accounts: viewModel.accounts)) \(mainCurrency.rawValue)") : "")
+            .navigationTitle(endAnimation ? navigationTitle : "")
             .offset(y: endAnimation ? 0 : frame.height)
         }
     }

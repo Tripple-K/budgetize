@@ -5,6 +5,13 @@ import Combine
 
 class AccountsViewModel: ObservableObject{
     @Published var accounts = [Account]()
+    var balance: Double {
+        var balance: Double = 0
+        accounts.forEach { account in
+            balance += account.balance
+        }
+        return balance
+    }
     
     private let path: String = "accounts"
     private let store = Firestore.firestore()
@@ -18,14 +25,6 @@ class AccountsViewModel: ObservableObject{
         }
     }
     
-    func calcucateBalance(accounts : [Account]) -> Double {
-        var balance: Double = 0
-        accounts.forEach { account in
-            balance += account.balance
-        }
-        return balance
-    }
-    
     func getAccounts() {
         store.collection("accounts")
             .whereField("userId", isEqualTo: userId)
@@ -36,7 +35,7 @@ class AccountsViewModel: ObservableObject{
             }
             
             self.accounts = accounts.compactMap { (queryDocumentSnapshot) -> Account? in
-                return try! queryDocumentSnapshot.data(as: Account.self)
+                return try? queryDocumentSnapshot.data(as: Account.self)
             }
         }
     }
