@@ -24,34 +24,33 @@ struct TransactionRecord: View {
     
     
     var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 15)
-                .padding(.horizontal, 10.0)
-                .padding(.vertical, 5.0)
-                .frame(width: .infinity, height: 75.0)
-                .foregroundColor(Color.white)
-            HStack {
-                Circle()
-                    .padding(.leading, 20.0)
-                    .frame(width: 70, height: 70)
-                    .foregroundColor(color)
-                VStack(alignment: .leading) {
-                    Text(category.rawValue)
-                        .font(.headline)
-                    Text(formattedDate)
-                        .font(.footnote)
-                }
-                Spacer()
-                VStack {
-                    Text(String(format: "%.2f", amount))
-                        .font(.title)
-                        .padding(.trailing)
-                        .foregroundColor(amount > 0.0 ? .green : .red)
-                }
+
+        HStack {
+            Circle()
+                .padding(.leading, 20.0)
+                .frame(width: 70, height: 70)
+                .foregroundColor(color)
+            VStack(alignment: .leading) {
+                Text(category.rawValue)
+                    .font(.headline)
+                Text(formattedDate)
+                    .font(.footnote)
             }
-            .foregroundColor(Color.black)
+            Spacer()
+            VStack {
+                Text(String(format: "%.2f", amount))
+                    .font(.title)
+                    .padding(.trailing)
+                    .foregroundColor(amount > 0.0 ? .green : .red)
+            }
         }
-        
+        .frame(height: 75.0)
+        .foregroundColor(Color.black)
+        .background(
+            RoundedRectangle(cornerRadius: 15)
+            
+            .foregroundColor(Color.white)
+        )
     }
 }
 

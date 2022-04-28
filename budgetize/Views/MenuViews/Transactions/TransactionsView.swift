@@ -24,17 +24,20 @@ struct TransactionsView: View {
     
     
     var body: some View {
-        VStack {
-            ScrollView {
-                ForEach(viewModel.transactions, id: \.self) { transaction in
-                    TransactionRecord(category: transaction.category, date: transaction.date, amount: transaction.amount)
-                    if viewModel.transactions.last != transaction {
-                        Rectangle()
-                            .padding(.horizontal, 40.0)
-                            .frame(height: 2.0)
-                            .foregroundColor(Color.gray)
+        VStack (spacing: 0) {
+            ScrollView (.vertical, showsIndicators: false) {
+                VStack (spacing: 0) {
+                    ForEach(viewModel.transactions, id: \.self) { transaction in
+                       
+                            TransactionRecord(category: transaction.category, date: transaction.date, amount: transaction.amount)
+                            if viewModel.transactions.last != transaction {
+                                Rectangle()
+                                    .padding(.horizontal, 40.0)
+                                    .frame(height: 2.0)
+                                    .foregroundColor(Color.gray)
+                            }
+                       
                     }
-                    
                 }
             }
             HStack {

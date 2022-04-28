@@ -1,9 +1,3 @@
-//
-//  OverView.swift
-//  budgetize
-//
-//  Created by Eugene Ned on 24.04.2022.
-//
 
 import SwiftUI
 

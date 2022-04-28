@@ -47,6 +47,7 @@ struct TransactionEditView: View {
                     }
                 }
             }
+            .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(
                 leading: cancelButton,
                 trailing: createButton
