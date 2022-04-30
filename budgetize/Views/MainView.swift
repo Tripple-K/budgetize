@@ -19,7 +19,7 @@ struct MainView: View {
     
     var navigationTitle: String {
         if chosenTab != .Settings {
-            return String("\(viewModel.balance) \(mainCurrency.rawValue)")
+            return String("\(viewModel.calculateBalance()) \(mainCurrency.rawValue)")
         }
         return "Settings"
     }

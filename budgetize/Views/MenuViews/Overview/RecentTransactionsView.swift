@@ -34,7 +34,7 @@ struct RecentTransactionsView: View {
                 
                 TransactionRowView(category: transaction.category, date: transaction.date, amount: transaction.amount)
                 Divider()
-                    .opacity(viewModel.transactions[4] == transaction ? 0 : 1)
+                    .opacity(viewModel.transactions.prefix(5).last == transaction ? 0 : 1)
                     .padding(.horizontal)
                 
             }
