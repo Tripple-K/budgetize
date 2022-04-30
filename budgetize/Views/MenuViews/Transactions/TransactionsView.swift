@@ -8,48 +8,43 @@ struct TransactionsView: View {
     
     @State var presentAddTransactionSheet = false
     
-    private func transactionRowView(transaction: Transaction) -> some View {
-        VStack {
-            VStack(alignment: .leading) {
-                Text(transaction.category.rawValue)
-                    .font(.headline)
-                Text("\(transaction.type.rawValue)")
-                    .font(.subheadline)
-            }
-            Spacer()
-            Text(String(format: "%.2f", transaction.amount))
-            Text(String("\(transaction.date)"))
-        }
-    }
-    
-    
     var body: some View {
-        VStack (spacing: 0) {
-            ScrollView (.vertical, showsIndicators: false) {
-                VStack (spacing: 0) {
-                    ForEach(viewModel.transactions, id: \.self) { transaction in
-                       
-                            TransactionRecord(category: transaction.category, date: transaction.date, amount: transaction.amount)
-                            if viewModel.transactions.last != transaction {
-                                Rectangle()
-                                    .padding(.horizontal, 40.0)
-                                    .frame(height: 2.0)
-                                    .foregroundColor(Color.gray)
+        ZStack {
+            VStack (spacing: 0) {
+                ScrollView (.vertical, showsIndicators: false) {
+                    VStack (spacing: 0) {
+                        ForEach(Array(viewModel.groupTransactionByMonth()), id: \.key) { month, transactions in
+                            Section {
+                                ForEach(transactions) { transaction in
+                                    TransactionRowView(category: transaction.category, date: transaction.date, amount: transaction.amount)
+                                }
+                            } header: {
+                                Text(month)
                             }
-                       
+                        }
                     }
                 }
+                
             }
-            HStack {
-                Button(action: {
-                    presentAddTransactionSheet.toggle()
-                }, label: {
-                    BrandButton(text: "+ Add transaction")
-                })
+            VStack {
+                Spacer()
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        presentAddTransactionSheet.toggle()
+                    }, label: {
+                        if viewModel.transactions.isEmpty {
+                            BrandButton(text: "+ Add transaction")
+                        } else {
+                            BrandButton(text: "+")
+                        }
+                    })
+                }
             }
-        }
-        .sheet(isPresented: $presentAddTransactionSheet) {
-            TransactionEditView()
+            .padding()
+            .sheet(isPresented: $presentAddTransactionSheet) {
+                TransactionEditView()
+            }
         }
     }
 }

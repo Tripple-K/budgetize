@@ -56,6 +56,7 @@ struct AccountEditView: View {
                 }
                 Section(header: Text("Balance")) {
                     TextField("Balance", value: $viewModel.account.balance, formatter: NumberFormatter())
+                        .keyboardType(.numberPad)
                 }
                 
                 if mode == .edit {

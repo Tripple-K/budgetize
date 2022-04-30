@@ -2,6 +2,9 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 import FirebaseAuth
 import Combine
+import Collections
+
+typealias TransactionGroup = OrderedDictionary<String, [Transaction]>
 
 class TransactionsViewModel: ObservableObject{
     @Published var transactions = [Transaction]()
@@ -31,6 +34,17 @@ class TransactionsViewModel: ObservableObject{
                 return try? queryDocumentSnapshot.data(as: Transaction.self)
             }
         }
+    }
+    
+    func groupTransactionByMonth() -> TransactionGroup {
+        guard !transactions.isEmpty else { return [:] }
+        
+        let sortedTransactions = transactions.sorted(by: {
+            $0.date.compare($1.date) == .orderedDescending
+        })
+        let groupedTransactions = TransactionGroup(grouping: sortedTransactions) { $0.month }
+        
+        return groupedTransactions
     }
     
 }

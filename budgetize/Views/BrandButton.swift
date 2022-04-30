@@ -8,16 +8,19 @@
 import SwiftUI
 
 struct BrandButton: View {
-    var text: String
+    var text: String = "+"
     
     var body: some View {
-        Text(text)
-            .font(.title2)
-            .foregroundColor(Color.white)
-            .padding(.horizontal, 90.0)
-            .padding(.vertical, 15.0)
-            .background(Color(.systemIndigo))
-            .cornerRadius(40)
+        
+        ZStack {
+            RoundedRectangle(cornerRadius: 20, style: .continuous)
+                .fill(Color(.systemIndigo))
+                .frame(width: text == "+" ? 50 : .infinity, height: 50)
+            Text(text)
+                .font(.title2)
+                .foregroundColor(Color.white)
+        }
+        .padding()
     }
 }
 

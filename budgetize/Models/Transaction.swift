@@ -12,6 +12,13 @@ struct Transaction: Identifiable, Codable, Hashable {
     var date: Date = Date()
     var note: String = ""
     var recurring: Bool = false
+    
+    var month: String {
+        if #available(iOS 15.0, *) {
+            return date.formatted(.dateTime.year().month())
+        }
+        return ""
+    }
 }
 
 

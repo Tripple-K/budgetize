@@ -32,9 +32,9 @@ struct TransactionEditView: View {
                 HStack {
                     Spacer()
                     TextField("Amount", value: $viewModel.transaction.amount, formatter: NumberFormatter())
+                        .keyboardType(.numberPad)
                 }
                 TextField("Note", text: $viewModel.transaction.note)
-                    .keyboardType(.numberPad)
                 DatePicker(selection: $viewModel.transaction.date, in: ...Date(), displayedComponents: .date) {
                     Text("Select a date")
                 }

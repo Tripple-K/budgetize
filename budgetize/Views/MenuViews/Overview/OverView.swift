@@ -3,7 +3,7 @@ import SwiftUI
 
 struct OverView: View {
     var body: some View {
-        Text("Overview")
+        RecentTransactionsView()
     }
 }
 

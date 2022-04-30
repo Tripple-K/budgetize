@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80184563281D4DE2007AFAC9 /* AccountRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80184562281D4DE2007AFAC9 /* AccountRowView.swift */; };
+		80184566281D6461007AFAC9 /* RecentTransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80184565281D6461007AFAC9 /* RecentTransactionsView.swift */; };
+		80184569281D7BC9007AFAC9 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 80184568281D7BC9007AFAC9 /* Collections */; };
 		804909C727B6C7C900034FB1 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804909C627B6C7C900034FB1 /* SplashScreen.swift */; };
 		807FE83A281ADF9C008B2C03 /* TransactionEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807FE839281ADF9C008B2C03 /* TransactionEditView.swift */; };
 		807FE83C281AE934008B2C03 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807FE83B281AE934008B2C03 /* Transaction.swift */; };
@@ -16,7 +19,7 @@
 		808974F82818794B00F3BDA7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808974F72818794B00F3BDA7 /* SettingsView.swift */; };
 		80A404EC281B035A0032330B /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A404EB281B035A0032330B /* TransactionsViewModel.swift */; };
 		80A404EE281B08C90032330B /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A404ED281B08C90032330B /* TransactionViewModel.swift */; };
-		80A404F0281B16470032330B /* TransactionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A404EF281B16470032330B /* TransactionRecord.swift */; };
+		80A404F0281B16470032330B /* TransactionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A404EF281B16470032330B /* TransactionRowView.swift */; };
 		80B6C21627B972D900EAC5E0 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B6C21527B972D900EAC5E0 /* OnboardingView.swift */; };
 		80CA6E3D27B46D9E0015F1A2 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA6E3C27B46D9E0015F1A2 /* WelcomeView.swift */; };
 		80CA6E4027B46FCE0015F1A2 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA6E3F27B46FCE0015F1A2 /* AuthViewModel.swift */; };
@@ -47,6 +50,8 @@
 /* Begin PBXFileReference section */
 		1098F9AE17D36723C489CF4E /* Pods-budgetize.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-budgetize.release.xcconfig"; path = "Target Support Files/Pods-budgetize/Pods-budgetize.release.xcconfig"; sourceTree = "<group>"; };
 		3ABBD62836E6C589AC113D75 /* Pods_budgetize.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_budgetize.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		80184562281D4DE2007AFAC9 /* AccountRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRowView.swift; sourceTree = "<group>"; };
+		80184565281D6461007AFAC9 /* RecentTransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTransactionsView.swift; sourceTree = "<group>"; };
 		804909C627B6C7C900034FB1 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		807FE839281ADF9C008B2C03 /* TransactionEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionEditView.swift; sourceTree = "<group>"; };
 		807FE83B281AE934008B2C03 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
@@ -56,7 +61,7 @@
 		808974F72818794B00F3BDA7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		80A404EB281B035A0032330B /* TransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
 		80A404ED281B08C90032330B /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
-		80A404EF281B16470032330B /* TransactionRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRecord.swift; sourceTree = "<group>"; };
+		80A404EF281B16470032330B /* TransactionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRowView.swift; sourceTree = "<group>"; };
 		80B6C21527B972D900EAC5E0 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		80CA6E3C27B46D9E0015F1A2 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		80CA6E3E27B46F480015F1A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -93,12 +98,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80184569281D7BC9007AFAC9 /* Collections in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		80184564281D6443007AFAC9 /* Overview */ = {
+			isa = PBXGroup;
+			children = (
+				BA5EDBF228183048003365DD /* OverView.swift */,
+				80184565281D6461007AFAC9 /* RecentTransactionsView.swift */,
+			);
+			path = Overview;
+			sourceTree = "<group>";
+		};
 		80703ADA27B433750046BBBA /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,7 +137,6 @@
 				BA4EF51427B98A4400815A55 /* CurrencyForm.swift */,
 				BA4EF51627B98AF100815A55 /* AccountForm.swift */,
 				80CBFB33281AFC15000B949E /* BrandButton.swift */,
-				80A404EF281B16470032330B /* TransactionRecord.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -142,6 +156,7 @@
 		807FE838281ADF79008B2C03 /* Transactions */ = {
 			isa = PBXGroup;
 			children = (
+				80A404EF281B16470032330B /* TransactionRowView.swift */,
 				BA5EDBF328183048003365DD /* TransactionsView.swift */,
 				807FE839281ADF9C008B2C03 /* TransactionEditView.swift */,
 			);
@@ -154,6 +169,7 @@
 				BA5EDBF428183048003365DD /* AccountsView.swift */,
 				808974F128183E5D00F3BDA7 /* AccountEditView.swift */,
 				808974F5281869AE00F3BDA7 /* AccountDetailsView.swift */,
+				80184562281D4DE2007AFAC9 /* AccountRowView.swift */,
 			);
 			path = Accounts;
 			sourceTree = "<group>";
@@ -177,10 +193,10 @@
 		BA5EDBF028183047003365DD /* MenuViews */ = {
 			isa = PBXGroup;
 			children = (
+				80184564281D6443007AFAC9 /* Overview */,
 				807FE838281ADF79008B2C03 /* Transactions */,
 				808974F028183E4200F3BDA7 /* Accounts */,
 				BA5EDBF128183047003365DD /* HomeView.swift */,
-				BA5EDBF228183048003365DD /* OverView.swift */,
 				808974F72818794B00F3BDA7 /* SettingsView.swift */,
 			);
 			path = MenuViews;
@@ -268,6 +284,9 @@
 			dependencies = (
 			);
 			name = budgetize;
+			packageProductDependencies = (
+				80184568281D7BC9007AFAC9 /* Collections */,
+			);
 			productName = budgetize;
 			productReference = BA64371E27B42B610078BA6A /* budgetize.app */;
 			productType = "com.apple.product-type.application";
@@ -296,6 +315,9 @@
 				Base,
 			);
 			mainGroup = BA64371527B42B610078BA6A;
+			packageReferences = (
+				80184567281D7BC9007AFAC9 /* XCRemoteSwiftPackageReference "swift-collections" */,
+			);
 			productRefGroup = BA64371F27B42B610078BA6A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -369,6 +391,7 @@
 				BA5EDBF828183048003365DD /* AccountsView.swift in Sources */,
 				807FE83A281ADF9C008B2C03 /* TransactionEditView.swift in Sources */,
 				BA4EF51E27B9958E00815A55 /* UserRepository.swift in Sources */,
+				80184566281D6461007AFAC9 /* RecentTransactionsView.swift in Sources */,
 				80CBFB34281AFC15000B949E /* BrandButton.swift in Sources */,
 				80CA6E4227B476710015F1A2 /* GoogleSignInButton.swift in Sources */,
 				BA4EF51327B986D500815A55 /* MainView.swift in Sources */,
@@ -386,6 +409,7 @@
 				80CA6E4827B47CD60015F1A2 /* InitView.swift in Sources */,
 				808974F82818794B00F3BDA7 /* SettingsView.swift in Sources */,
 				807FE83C281AE934008B2C03 /* Transaction.swift in Sources */,
+				80184563281D4DE2007AFAC9 /* AccountRowView.swift in Sources */,
 				BA64372227B42B610078BA6A /* budgetizeApp.swift in Sources */,
 				80CA6E3D27B46D9E0015F1A2 /* WelcomeView.swift in Sources */,
 				808974F6281869AE00F3BDA7 /* AccountDetailsView.swift in Sources */,
@@ -395,7 +419,7 @@
 				80B6C21627B972D900EAC5E0 /* OnboardingView.swift in Sources */,
 				BA1B5F232815CABD008A574A /* AppleAuth.swift in Sources */,
 				BA79BF9027BC3BE700C06A80 /* OAuthService.swift in Sources */,
-				80A404F0281B16470032330B /* TransactionRecord.swift in Sources */,
+				80A404F0281B16470032330B /* TransactionRowView.swift in Sources */,
 				80A404EE281B08C90032330B /* TransactionViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -454,7 +478,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -509,7 +533,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -538,7 +562,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -643,7 +667,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -751,6 +775,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		80184567281D7BC9007AFAC9 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		80184568281D7BC9007AFAC9 /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 80184567281D7BC9007AFAC9 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BA64371627B42B610078BA6A /* Project object */;
 }

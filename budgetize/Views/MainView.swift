@@ -55,6 +55,7 @@ struct MainView: View {
                     .tag(Tabs.Settings)
             }
             .navigationTitle(endAnimation ? navigationTitle : "")
+            .navigationBarTitleDisplayMode(.inline)
             .offset(y: endAnimation ? 0 : frame.height)
         }
     }
