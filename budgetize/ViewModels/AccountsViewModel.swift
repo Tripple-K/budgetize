@@ -10,8 +10,8 @@ struct ResultOf: Decodable {
 
 class AccountsViewModel: ObservableObject{
     @Published var accounts = [Account]()
-    
-    @Published var resultOfConversion = ResultOf()
+
+    @Published var balance = 0.0
     
     @AppStorage("mainCurrency") var mainCurrency: CurrencyType = .usd
     
@@ -24,7 +24,6 @@ class AccountsViewModel: ObservableObject{
         if let userId = Auth.auth().currentUser?.uid {
             self.userId = userId
             self.getAccounts()
-            self.calculateBalance()
         }
     }
     
@@ -40,40 +39,45 @@ class AccountsViewModel: ObservableObject{
                 self.accounts = accounts.compactMap { (queryDocumentSnapshot) -> Account? in
                     return try? queryDocumentSnapshot.data(as: Account.self)
                 }
+                
+                self.calculateBalance()
             }
     }
     
-    func convert(amount: Double, from: CurrencyType, to: CurrencyType) {
+    func convert(amount: Double, from: CurrencyType, to: CurrencyType, completion: @escaping (Result<ResultOf, Error>)->Void) {
         let url = "https://api.exchangerate.host/convert?from=\(from.rawValue.uppercased())&to=\(to.rawValue.uppercased())&amount=\(Int(amount))"
         
         let session = URLSession(configuration: .default)
         
-        session.dataTask(with: URL(string: url)!) { [self] (data, _, _) in
-//            guard let JSONData = data else { return }
-            let JSONData = data
+        session.dataTask(with: URL(string: url)!) { data, _, _ in
+            guard let JSONData = data else { return }
 
             do {
-                let conversion = try JSONDecoder().decode(ResultOf.self, from: JSONData!)
-                print(conversion)
-                resultOfConversion = conversion
+                let conversion = try JSONDecoder().decode(ResultOf.self, from: JSONData)
+                print(conversion.result)
+                completion(.success(conversion))
             } catch {
-                print(error.localizedDescription)
+                completion(.failure(error))
             }
-        }
+        }.resume()
     }
     
-    func calculateBalance() -> Double {
-        var balance: Double = 0
+    func calculateBalance() {
+        balance = 0
         accounts.forEach { account in
             if account.currency == mainCurrency {
                 balance += account.balance
             } else {
-                convert(amount: account.balance, from: account.currency, to: mainCurrency)
-                print(resultOfConversion.result)
-                balance += resultOfConversion.result
+                convert(amount: account.balance, from: account.currency, to: mainCurrency) { result in
+                    switch result {
+                    case .success(let resultOf):
+                        print(resultOf.result)
+                        self.balance += resultOf.result
+                    case .failure(let error): print(error.localizedDescription)
+                    }
+                }
+               
             }
         }
-        print(balance)
-        return balance
     }
 }
