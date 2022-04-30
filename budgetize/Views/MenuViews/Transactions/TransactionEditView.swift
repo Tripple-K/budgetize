@@ -6,6 +6,7 @@ struct TransactionEditView: View {
     @StateObject var viewModel = TransactionViewModel()
     @Environment(\.presentationMode) var presentationMode
     @State var presentActionSheet = false
+
     
     var mode: Mode = .new
     var completionHandler: ((Result<Action, Error>) -> Void)?
@@ -38,7 +39,19 @@ struct TransactionEditView: View {
                 DatePicker(selection: $viewModel.transaction.date, in: ...Date(), displayedComponents: .date) {
                     Text("Select a date")
                 }
-                Spacer()
+                Picker("Category", selection: $viewModel.transaction.category) {
+                    ForEach(CategoryType.allCases, id: \.self)  { category in
+                        Text(category.rawValue)
+                            .tag(category)
+                    }
+                }.pickerStyle(DefaultPickerStyle())
+                Picker("Type", selection: $viewModel.transaction.type) {
+                    ForEach(TransactionType.allCases, id: \.self)  { type in
+                        Text(type.rawValue)
+                            .tag(type)
+                    }
+                }.pickerStyle(SegmentedPickerStyle())
+            
                 
                 if mode == .edit {
                     Section {
