@@ -10,6 +10,7 @@ target 'budgetize' do
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
   pod 'GoogleSignIn'
+  pod 'Protobuf'
 
   # Pods for budgetize
 

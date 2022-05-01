@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3CD5D1200B5CC6EFA810F2D9 /* Pods_budgetize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ABBD62836E6C589AC113D75 /* Pods_budgetize.framework */; };
 		80184563281D4DE2007AFAC9 /* AccountRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80184562281D4DE2007AFAC9 /* AccountRowView.swift */; };
 		80184566281D6461007AFAC9 /* RecentTransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80184565281D6461007AFAC9 /* RecentTransactionsView.swift */; };
 		80184569281D7BC9007AFAC9 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 80184568281D7BC9007AFAC9 /* Collections */; };
@@ -99,6 +100,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80184569281D7BC9007AFAC9 /* Collections in Frameworks */,
+				3CD5D1200B5CC6EFA810F2D9 /* Pods_budgetize.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,7 +318,7 @@
 			);
 			mainGroup = BA64371527B42B610078BA6A;
 			packageReferences = (
-				80184567281D7BC9007AFAC9 /* XCRemoteSwiftPackageReference "swift-collections" */,
+				80184567281D7BC9007AFAC9 /* XCRemoteSwiftPackageReference "swift-collections.git" */,
 			);
 			productRefGroup = BA64371F27B42B610078BA6A /* Products */;
 			projectDirPath = "";
@@ -777,7 +779,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		80184567281D7BC9007AFAC9 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+		80184567281D7BC9007AFAC9 /* XCRemoteSwiftPackageReference "swift-collections.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-collections.git";
 			requirement = {
@@ -790,7 +792,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		80184568281D7BC9007AFAC9 /* Collections */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 80184567281D7BC9007AFAC9 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			package = 80184567281D7BC9007AFAC9 /* XCRemoteSwiftPackageReference "swift-collections.git" */;
 			productName = Collections;
 		};
 /* End XCSwiftPackageProductDependency section */
