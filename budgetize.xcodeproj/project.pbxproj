@@ -27,6 +27,7 @@
 		80CA6E4227B476710015F1A2 /* GoogleSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA6E4127B476710015F1A2 /* GoogleSignInButton.swift */; };
 		80CA6E4827B47CD60015F1A2 /* InitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA6E4727B47CD60015F1A2 /* InitView.swift */; };
 		80CBFB34281AFC15000B949E /* BrandButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CBFB33281AFC15000B949E /* BrandButton.swift */; };
+		80D463B8281F12C200CC0AEB /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 80D463B7281F12C200CC0AEB /* SwiftUICharts */; };
 		BA1B5F232815CABD008A574A /* AppleAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1B5F222815CABD008A574A /* AppleAuth.swift */; };
 		BA4EF51327B986D500815A55 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EF51227B986D500815A55 /* MainView.swift */; };
 		BA4EF51527B98A4400815A55 /* CurrencyForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EF51427B98A4400815A55 /* CurrencyForm.swift */; };
@@ -99,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80D463B8281F12C200CC0AEB /* SwiftUICharts in Frameworks */,
 				80184569281D7BC9007AFAC9 /* Collections in Frameworks */,
 				3CD5D1200B5CC6EFA810F2D9 /* Pods_budgetize.framework in Frameworks */,
 			);
@@ -288,6 +290,7 @@
 			name = budgetize;
 			packageProductDependencies = (
 				80184568281D7BC9007AFAC9 /* Collections */,
+				80D463B7281F12C200CC0AEB /* SwiftUICharts */,
 			);
 			productName = budgetize;
 			productReference = BA64371E27B42B610078BA6A /* budgetize.app */;
@@ -318,7 +321,8 @@
 			);
 			mainGroup = BA64371527B42B610078BA6A;
 			packageReferences = (
-				80184567281D7BC9007AFAC9 /* XCRemoteSwiftPackageReference "swift-collections.git" */,
+				80184567281D7BC9007AFAC9 /* XCRemoteSwiftPackageReference "swift-collections" */,
+				80D463B6281F12C200CC0AEB /* XCRemoteSwiftPackageReference "ChartView" */,
 			);
 			productRefGroup = BA64371F27B42B610078BA6A /* Products */;
 			projectDirPath = "";
@@ -779,7 +783,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		80184567281D7BC9007AFAC9 /* XCRemoteSwiftPackageReference "swift-collections.git" */ = {
+		80184567281D7BC9007AFAC9 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-collections.git";
 			requirement = {
@@ -787,13 +791,26 @@
 				minimumVersion = 1.0.2;
 			};
 		};
+		80D463B6281F12C200CC0AEB /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = exactVersion;
+				version = "2.0.0-beta.2";
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		80184568281D7BC9007AFAC9 /* Collections */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 80184567281D7BC9007AFAC9 /* XCRemoteSwiftPackageReference "swift-collections.git" */;
+			package = 80184567281D7BC9007AFAC9 /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = Collections;
+		};
+		80D463B7281F12C200CC0AEB /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 80D463B6281F12C200CC0AEB /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

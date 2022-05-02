@@ -30,7 +30,9 @@ struct RecentTransactionsView: View {
             }
             .padding(.top)
             
-            ForEach(viewModel.transactions.prefix(5), id: \.self) { transaction in
+            ForEach(viewModel.transactions.sorted(by: {
+                $0.date.compare($1.date) == .orderedDescending
+            }).prefix(5), id: \.self) { transaction in
                 
                 TransactionRowView(category: transaction.category, date: transaction.date, amount: transaction.amount)
                 Divider()
