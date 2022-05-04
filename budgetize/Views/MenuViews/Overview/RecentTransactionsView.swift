@@ -34,7 +34,7 @@ struct RecentTransactionsView: View {
                 $0.date.compare($1.date) == .orderedDescending
             }).prefix(5), id: \.self) { transaction in
                 
-                TransactionRowView(category: transaction.category, date: transaction.date, amount: transaction.amount)
+                TransactionRowView(transaction: transaction)
                 Divider()
                     .opacity(viewModel.transactions.prefix(5).last == transaction ? 0 : 1)
                     .padding(.horizontal)

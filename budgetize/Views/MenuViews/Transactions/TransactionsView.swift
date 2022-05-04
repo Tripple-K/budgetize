@@ -16,10 +16,17 @@ struct TransactionsView: View {
                         ForEach(Array(viewModel.groupTransactionByMonth()), id: \.key) { month, transactions in
                             Section {
                                 ForEach(transactions) { transaction in
-                                    TransactionRowView(category: transaction.category, date: transaction.date, amount: transaction.amount)
+                                    TransactionRowView(transaction: transaction)
                                 }
                             } header: {
-                                Text(month)
+                                Divider()
+                                HStack{
+                                    Text(month)
+                                        .padding()
+                                    Spacer()
+                                }
+                                Divider()
+                                
                             }
                         }
                     }

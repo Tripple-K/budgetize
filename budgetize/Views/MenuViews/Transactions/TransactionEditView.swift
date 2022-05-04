@@ -8,7 +8,7 @@ struct TransactionEditView: View {
     @StateObject var accountViewModel = AccountViewModel()
     @Environment(\.presentationMode) var presentationMode
     @State var presentActionSheet = false
-
+    
     @AppStorage("defaultAccount") var defaultAccount: String?
     
     var mode: Mode = .new
@@ -64,7 +64,6 @@ struct TransactionEditView: View {
                     }
                 }.pickerStyle(SegmentedPickerStyle())
                 TextField("Note", text: $viewModel.transaction.note)
-            
                 
                 if mode == .edit {
                     Section {
