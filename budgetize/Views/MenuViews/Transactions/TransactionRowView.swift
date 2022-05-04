@@ -8,7 +8,6 @@ struct TransactionRowView: View {
 //    var color: Color = Color(.systemIndigo)
 //    var amount: Double = 100.50
 //    var currency: CurrencyType = .uah
-    var accountName: String = "mono black"
     
     @ObservedObject var accountViewModel = AccountViewModel()
     var transaction: Transaction
@@ -44,7 +43,7 @@ struct TransactionRowView: View {
                     .opacity(0.6)
             }
             .onAppear {
-                accountViewModel.getAccount(with: transaction.accountId)
+                accountViewModel.getAccount(with: transaction.fromAccountId)
             }
             Spacer()
             
@@ -59,9 +58,9 @@ struct TransactionRowView: View {
 struct TransactionRowView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            TransactionRowView(transaction: Transaction(id: "", userId: "", accountId: "H5xTa17a8ChCwsPFFyOo", type: .income, currency: .uah, category: .family, amount: 228, date: Date(), note: "", recurring: false))
+            TransactionRowView(transaction: Transaction(id: "", userId: "", fromAccountId: "H5xTa17a8ChCwsPFFyOo", type: .income, currency: .uah, category: .family, amount: 228, date: Date(), note: "", recurring: false))
                 .preferredColorScheme(.dark)
-            TransactionRowView(transaction: Transaction(id: "", userId: "", accountId: "3a6LSNqV2lUQdtEgLqQe", type: .expense, currency: .eur, category: .gifts, amount: 1337, date: Date(), note: "", recurring: false))
+            TransactionRowView(transaction: Transaction(id: "", userId: "", fromAccountId: "3a6LSNqV2lUQdtEgLqQe", type: .expense, currency: .eur, category: .gifts, amount: 1337, date: Date(), note: "", recurring: false))
         }
     }
 }

@@ -4,7 +4,8 @@ import FirebaseFirestoreSwift
 struct Transaction: Identifiable, Codable, Hashable {
     @DocumentID var id: String?
     var userId: String = ""
-    var accountId: String = ""
+    var fromAccountId: String = ""
+    var toAccountId: String? = ""
     var type: TransactionType = .expense
     var currency: CurrencyType = .usd
     var category: CategoryType = .groceries

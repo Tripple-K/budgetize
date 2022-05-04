@@ -18,6 +18,9 @@ struct TransactionsView: View {
                                 ForEach(transactions) { transaction in
                                     TransactionRowView(transaction: transaction)
                                 }
+//                                .onDelete(perform: { index in
+//                                    viewModel.transactions.remove(atOffsets: index)
+//                                })
                             } header: {
                                 Divider()
                                 HStack{

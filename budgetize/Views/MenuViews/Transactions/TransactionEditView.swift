@@ -9,6 +9,8 @@ struct TransactionEditView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var presentActionSheet = false
     
+    @State var showTransferElements = false
+    
     @AppStorage("defaultAccount") var defaultAccount: String?
     
     var mode: Mode = .new
@@ -38,16 +40,25 @@ struct TransactionEditView: View {
                     TextField("Amount", value: $viewModel.transaction.amount, formatter: NumberFormatter())
                         .keyboardType(.numberPad)
                 }
-                Picker("Account", selection: $viewModel.transaction.accountId) {
+                Picker(showTransferElements ? "From account" : "Account", selection: $viewModel.transaction.fromAccountId) {
                     ForEach(accountsViewModel.accounts, id: \.self)  { account in
                         Text(account.name)
-                            .tag(String(account.id ?? ""))
+                            .tag(account.id ?? "")
+                    }
+                }.pickerStyle(DefaultPickerStyle())
+                    .onChange(of: viewModel.transaction.fromAccountId) { newValue in
+                        accountViewModel.getAccount(with: newValue)
+                    }
+                
+                if showTransferElements {
+                    Picker("To account", selection: $viewModel.transaction.toAccountId) {
+                        ForEach(accountsViewModel.accounts, id: \.self)  { account in
+                            Text(account.name)
+                                .tag(account.id)
+                        }
                     }
                 }
-                .onChange(of: viewModel.transaction.accountId) { newValue in
-                    accountViewModel.getAccount(with: newValue)
-                }
-                .pickerStyle(DefaultPickerStyle())
+                
                 DatePicker(selection: $viewModel.transaction.date, in: ...Date(), displayedComponents: .date) {
                     Text("Select a date")
                 }
@@ -57,12 +68,19 @@ struct TransactionEditView: View {
                             .tag(category)
                     }
                 }.pickerStyle(DefaultPickerStyle())
+                
                 Picker("Type", selection: $viewModel.transaction.type) {
                     ForEach(TransactionType.allCases, id: \.self)  { type in
                         Text(type.rawValue)
                             .tag(type)
                     }
                 }.pickerStyle(SegmentedPickerStyle())
+                    .onChange(of: viewModel.transaction.type) { transactionType in
+                        if transactionType == .transfer {
+                            showTransferElements = true
+                        } else { showTransferElements = false }
+                    }
+                
                 TextField("Note", text: $viewModel.transaction.note)
                 
                 if mode == .edit {
@@ -87,7 +105,7 @@ struct TransactionEditView: View {
             }
         }
         .onAppear {
-            viewModel.transaction.accountId = defaultAccount ?? ""
+            viewModel.transaction.fromAccountId = defaultAccount ?? ""
         }
     }
     

@@ -30,9 +30,9 @@ class AccountViewModel: ObservableObject {
         }
     }
     
-    func getAccount(with accountId: String) {
+    func getAccount(with fromAccountId: String) {
         store.collection("accounts")
-            .document(accountId).getDocument { querySnapshot, error in
+            .document(fromAccountId).getDocument { querySnapshot, error in
                 if let error = error {
                     print("Error getting cards: \(error.localizedDescription)")
                     return
@@ -80,20 +80,41 @@ class AccountViewModel: ObservableObject {
         case .expense:
             account.balance -= transaction.amount
         case .transfer:
-            transferBalance()
+            transferBalance(for: transaction)
         }
-        if let accountId = account.id {
+        if let fromAccountId = account.id {
             do {
-                try store.collection("accounts").document(accountId).setData(from: account)
+                try store.collection("accounts").document(fromAccountId).setData(from: account)
             } catch {
                 print(error.localizedDescription)
             }
-           
         }
     }
     
-    func transferBalance() {
-        
+    func transferBalance(for transaction: Transaction) {
+        if transaction.toAccountId != "" {
+            
+            account.balance -= transaction.amount
+            
+            store.collection("accounts")
+                .document(transaction.toAccountId!).getDocument { querySnapshot, error in
+                    if let error = error {
+                        print("Error getting cards: \(error.localizedDescription)")
+                        return
+                    }
+                    
+                    if var account = try? querySnapshot?.data(as: Account.self) {
+                        account.balance += transaction.amount
+                        do {
+                            try self.store.collection("accounts").document(transaction.toAccountId!).setData(from: account)
+                        } catch {
+                            print(error.localizedDescription)
+                        }
+                    }
+                }
+            
+            
+        }
     }
     
 }
