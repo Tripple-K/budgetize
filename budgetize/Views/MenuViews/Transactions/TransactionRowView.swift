@@ -13,6 +13,14 @@ struct TransactionRowView: View {
     @ObservedObject var accountViewModel = AccountViewModel()
     var transaction: Transaction
     
+    var color: Color {
+        switch transaction.type {
+        case .income: return .green
+        case .expense: return .red
+        case .transfer: return .gray
+        }
+    }
+    
     var body: some View {
         
         HStack(spacing: 20) {
@@ -42,7 +50,7 @@ struct TransactionRowView: View {
             
             Text(transaction.amount, format: .currency(code: "\(transaction.currency.rawValue)"))
                 .bold()
-                .foregroundColor(transaction.amount > 0.0 ? .green : .red)
+                .foregroundColor(color)
         }
         .padding(8)
     }
