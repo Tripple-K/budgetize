@@ -4,9 +4,11 @@ import SwiftUI
 struct TransactionEditView: View {
     
     @StateObject var viewModel = TransactionViewModel()
+    @StateObject var accountsViewModel = AccountsViewModel()
     @Environment(\.presentationMode) var presentationMode
     @State var presentActionSheet = false
 
+    @AppStorage("defaultAccount") var defaultAccount: String?
     
     var mode: Mode = .new
     var completionHandler: ((Result<Action, Error>) -> Void)?
@@ -35,7 +37,12 @@ struct TransactionEditView: View {
                     TextField("Amount", value: $viewModel.transaction.amount, formatter: NumberFormatter())
                         .keyboardType(.numberPad)
                 }
-                TextField("Note", text: $viewModel.transaction.note)
+                Picker("Account", selection: $viewModel.transaction.accountId) {
+                    ForEach(accountsViewModel.accounts, id: \.self)  { account in
+                        Text(account.name)
+                            .tag(String(account.id ?? ""))
+                    }
+                }.pickerStyle(DefaultPickerStyle())
                 DatePicker(selection: $viewModel.transaction.date, in: ...Date(), displayedComponents: .date) {
                     Text("Select a date")
                 }
@@ -51,6 +58,7 @@ struct TransactionEditView: View {
                             .tag(type)
                     }
                 }.pickerStyle(SegmentedPickerStyle())
+                TextField("Note", text: $viewModel.transaction.note)
             
                 
                 if mode == .edit {
@@ -73,6 +81,9 @@ struct TransactionEditView: View {
                                 .cancel()
                             ])
             }
+        }
+        .onAppear {
+            viewModel.transaction.accountId = defaultAccount ?? ""
         }
     }
     
