@@ -30,6 +30,20 @@ class AccountViewModel: ObservableObject {
         }
     }
     
+    func getAccount(with accountId: String) {
+        store.collection("accounts")
+            .document(accountId).getDocument { querySnapshot, error in
+                if let error = error {
+                    print("Error getting cards: \(error.localizedDescription)")
+                    return
+                }
+                
+                if let account = try? querySnapshot?.data(as: Account.self) {
+                    self.account = account
+                }
+            }
+    }
+    
     func addAccount() {
         do {
             account.userId = Auth.auth().currentUser?.uid ?? ""
@@ -59,17 +73,27 @@ class AccountViewModel: ObservableObject {
         }
     }
     
-    func increaseBalance(on amount: Double, in account: Account) {
-        let updatedBalance = account.balance + amount
-        if let id = account.id {
-            store.collection("accounts").document(id).updateData(["balance": updatedBalance])
+    func changeBalance(with transaction: Transaction) {
+        switch transaction.type {
+        case .income:
+            account.balance += transaction.amount
+        case .expense:
+            account.balance -= transaction.amount
+        case .transfer:
+            transferBalance()
+        }
+        if let accountId = account.id {
+            do {
+                try store.collection("accounts").document(accountId).setData(from: account)
+            } catch {
+                print(error.localizedDescription)
+            }
+           
         }
     }
     
-    func decreaseBalance(on amount: Double, in account: Account) {
-        let updatedBalance = account.balance - amount
-        if let id = account.id {
-            store.collection("accounts").document(id).updateData(["balance": updatedBalance])
-        }
+    func transferBalance() {
+        
     }
+    
 }

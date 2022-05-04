@@ -43,7 +43,11 @@ struct TransactionEditView: View {
                         Text(account.name)
                             .tag(String(account.id ?? ""))
                     }
-                }.pickerStyle(DefaultPickerStyle())
+                }
+                .onChange(of: viewModel.transaction.accountId) { newValue in
+                    accountViewModel.getAccount(with: newValue)
+                }
+                .pickerStyle(DefaultPickerStyle())
                 DatePicker(selection: $viewModel.transaction.date, in: ...Date(), displayedComponents: .date) {
                     Text("Select a date")
                 }
@@ -97,16 +101,7 @@ struct TransactionEditView: View {
         switch mode {
         case .new:
             viewModel.addTransaction()
-            if viewModel.transaction.type == .income {
-                accountViewModel.increaseBalance(on: viewModel.transaction.amount,
-                                                 in: accountsViewModel.accounts.first(where: { $0.id == viewModel.transaction.accountId})!)
-            } else if viewModel.transaction.type == .expense {
-                accountViewModel.decreaseBalance(on: viewModel.transaction.amount,
-                                                 in: accountsViewModel.accounts.first(where: { $0.id == viewModel.transaction.accountId})!)
-            } else if viewModel.transaction.type == .transfer {
-                
-            }
-            
+            accountViewModel.changeBalance(with: viewModel.transaction)
         case .edit:
             viewModel.updateTransaction()
         }
