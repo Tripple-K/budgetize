@@ -15,7 +15,7 @@ struct BrandButton: View {
         ZStack {
             RoundedRectangle(cornerRadius: 20, style: .continuous)
                 .fill(Color(.systemIndigo))
-                .frame(width: text == "+" ? 50 : .infinity, height: 50)
+                .frame(width: text == "+" ? 50 : nil, height: 50)
             Text(text)
                 .font(.title2)
                 .foregroundColor(Color.white)

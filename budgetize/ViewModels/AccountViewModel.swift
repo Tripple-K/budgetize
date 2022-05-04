@@ -35,7 +35,7 @@ class AccountViewModel: ObservableObject {
             account.userId = Auth.auth().currentUser?.uid ?? ""
             let _ = try store.collection("accounts").addDocument(from: account)
         } catch {
-            print(error)
+            print(error.localizedDescription)
         }
     }
     
@@ -44,7 +44,7 @@ class AccountViewModel: ObservableObject {
             do {
                 try store.collection("accounts").document(id).setData(from: account)
             } catch {
-                print(error)
+                print(error.localizedDescription)
             }
         }
     }
@@ -56,6 +56,20 @@ class AccountViewModel: ObservableObject {
                     print(error.localizedDescription)
                 }
             }
+        }
+    }
+    
+    func increaseBalance(on amount: Double, in account: Account) {
+        let updatedBalance = account.balance + amount
+        if let id = account.id {
+            store.collection("accounts").document(id).updateData(["balance": updatedBalance])
+        }
+    }
+    
+    func decreaseBalance(on amount: Double, in account: Account) {
+        let updatedBalance = account.balance - amount
+        if let id = account.id {
+            store.collection("accounts").document(id).updateData(["balance": updatedBalance])
         }
     }
 }

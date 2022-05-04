@@ -5,6 +5,7 @@ struct TransactionEditView: View {
     
     @StateObject var viewModel = TransactionViewModel()
     @StateObject var accountsViewModel = AccountsViewModel()
+    @StateObject var accountViewModel = AccountViewModel()
     @Environment(\.presentationMode) var presentationMode
     @State var presentActionSheet = false
 
@@ -96,6 +97,16 @@ struct TransactionEditView: View {
         switch mode {
         case .new:
             viewModel.addTransaction()
+            if viewModel.transaction.type == .income {
+                accountViewModel.increaseBalance(on: viewModel.transaction.amount,
+                                                 in: accountsViewModel.accounts.first(where: { $0.id == viewModel.transaction.accountId})!)
+            } else if viewModel.transaction.type == .expense {
+                accountViewModel.decreaseBalance(on: viewModel.transaction.amount,
+                                                 in: accountsViewModel.accounts.first(where: { $0.id == viewModel.transaction.accountId})!)
+            } else if viewModel.transaction.type == .transfer {
+                
+            }
+            
         case .edit:
             viewModel.updateTransaction()
         }
