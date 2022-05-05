@@ -117,6 +117,7 @@ struct TransactionEditView: View {
         
         switch mode {
         case .new:
+            viewModel.transaction.currency = accountViewModel.account.currency
             viewModel.addTransaction()
             accountViewModel.changeBalance(with: viewModel.transaction)
         case .edit:
