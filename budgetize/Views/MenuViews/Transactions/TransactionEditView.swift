@@ -120,6 +120,7 @@ struct TransactionEditView: View {
             viewModel.transaction.currency = accountViewModel.account.currency
             viewModel.addTransaction()
             accountViewModel.changeBalance(with: viewModel.transaction)
+           
         case .edit:
             viewModel.updateTransaction()
         }

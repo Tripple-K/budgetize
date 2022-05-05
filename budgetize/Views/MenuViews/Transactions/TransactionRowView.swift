@@ -3,13 +3,9 @@ import SwiftUI
 
 struct TransactionRowView: View {
     
-    @ObservedObject var accountViewModel = AccountViewModel()
-    @ObservedObject var accountsViewModel = AccountsViewModel()
-    
-    var transaction: Transaction
-    
-    var toAccount: Account?
-    
+    @EnvironmentObject var accountsViewModel: AccountsViewModel
+    @State var transaction: Transaction
+
     var color: Color {
         switch transaction.type {
         case .income: return .green
@@ -33,13 +29,13 @@ struct TransactionRowView: View {
                     .bold()
                 
                 HStack {
-                    Text(accountViewModel.account.name)
+                    Text(accountsViewModel.accounts.first(where: { $0.id == transaction.fromAccountId })?.name ?? "")
                         .font(.footnote)
                         .opacity(0.8)
                     if transaction.type == .transfer {
                         Image(systemName: "arrow.right")
                             .opacity(0.8)
-                        Text(String("\(accountsViewModel.accounts.first(where: { $0.id == transaction.toAccountId })?.name ?? "")"))
+                        Text(accountsViewModel.accounts.first(where: { $0.id == transaction.toAccountId })?.name ?? "")
                             .font(.footnote)
                             .opacity(0.8)
                     }
@@ -48,9 +44,6 @@ struct TransactionRowView: View {
                 Text(transaction.date, format: .dateTime.year().month().day())
                     .font(.footnote)
                     .opacity(0.6)
-            }
-            .onAppear {
-                accountViewModel.getAccount(with: transaction.fromAccountId)
             }
             Spacer()
             

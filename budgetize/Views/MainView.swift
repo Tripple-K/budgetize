@@ -9,7 +9,7 @@ enum Tabs: String {
 }
 
 struct MainView: View {
-    @State var viewModel = AccountsViewModel()
+    @ObservedObject var accountsViewModel = AccountsViewModel()
     @State var chosenTab: Tabs = .Home
     @Binding var endAnimation: Bool
     
@@ -19,7 +19,7 @@ struct MainView: View {
     
     var navigationTitle: String {
         if chosenTab != .Settings {
-            return String(format: "%.2f \(mainCurrency.rawValue.uppercased())", viewModel.balance)
+            return String(format: "%.2f \(mainCurrency.rawValue.uppercased())", accountsViewModel.balance)
         }
         return "Settings"
     }
@@ -28,22 +28,26 @@ struct MainView: View {
         NavigationView {
             TabView(selection: $chosenTab) {
                 AccountsView()
+                    .environmentObject(accountsViewModel)
                     .tabItem {
                         Label("Accounts", systemImage:"square.stack.3d.up")
                     }
                     .tag(Tabs.Accounts)
                 TransactionsView()
+                    .environmentObject(accountsViewModel)
                     .tabItem {
                         Label("Transactions", systemImage:"list.bullet.below.rectangle")
                     }
                     .tag(Tabs.Transactions)
                 HomeView()
+                    .environmentObject(accountsViewModel)
                     .tabItem {
                         Label("Home", systemImage:"circle.dotted")
 
                     }
                     .tag(Tabs.Home)
                 OverView()
+                    .environmentObject(accountsViewModel)
                     .tabItem{
                         Label("Overview", systemImage:"sum")
                     }

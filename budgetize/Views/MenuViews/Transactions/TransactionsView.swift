@@ -4,6 +4,7 @@ import FirebaseAuth
 
 struct TransactionsView: View {
     
+    @EnvironmentObject var accountsViewModel: AccountsViewModel
     @ObservedObject private var viewModel = TransactionsViewModel()
     
     @State var presentAddTransactionSheet = false
@@ -16,7 +17,8 @@ struct TransactionsView: View {
                         ForEach(Array(viewModel.groupTransactionByMonth()), id: \.key) { month, transactions in
                             Section {
                                 ForEach(transactions) { transaction in
-                                    TransactionRowView(transaction: transaction)
+                                    TransactionRowView(transaction: transaction).environmentObject(accountsViewModel)
+                                    
                                 }
 //                                .onDelete(perform: { index in
 //                                    viewModel.transactions.remove(atOffsets: index)
