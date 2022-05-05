@@ -15,10 +15,7 @@ struct Transaction: Identifiable, Codable, Hashable {
     var recurring: Bool = false
     
     var month: String {
-        if #available(iOS 15.0, *) {
-            return date.formatted(.dateTime.year().month())
-        }
-        return ""
+        return date.formatted(.dateTime.year().month())
     }
 }
 

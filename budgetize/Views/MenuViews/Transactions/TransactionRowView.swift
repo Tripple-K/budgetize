@@ -2,15 +2,13 @@
 import SwiftUI
 
 struct TransactionRowView: View {
-//    var category: CategoryType = .groceries
-//    var date: Date = Date()
-//
-//    var color: Color = Color(.systemIndigo)
-//    var amount: Double = 100.50
-//    var currency: CurrencyType = .uah
     
     @ObservedObject var accountViewModel = AccountViewModel()
+    @ObservedObject var accountsViewModel = AccountsViewModel()
+    
     var transaction: Transaction
+    
+    var toAccount: Account?
     
     var color: Color {
         switch transaction.type {
@@ -34,9 +32,18 @@ struct TransactionRowView: View {
                     .font(.subheadline)
                     .bold()
                 
-                Text(accountViewModel.account.name)
-                    .font(.footnote)
-                    .opacity(0.8)
+                HStack {
+                    Text(accountViewModel.account.name)
+                        .font(.footnote)
+                        .opacity(0.8)
+                    if transaction.type == .transfer {
+                        Image(systemName: "arrow.right")
+                            .opacity(0.8)
+                        Text(String("\(accountsViewModel.accounts.first(where: { $0.id == transaction.toAccountId })?.name ?? "")"))
+                            .font(.footnote)
+                            .opacity(0.8)
+                    }
+                }
                 
                 Text(transaction.date, format: .dateTime.year().month().day())
                     .font(.footnote)
@@ -55,13 +62,13 @@ struct TransactionRowView: View {
     }
 }
 
-struct TransactionRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            TransactionRowView(transaction: Transaction(id: "", userId: "", fromAccountId: "H5xTa17a8ChCwsPFFyOo", type: .income, currency: .uah, category: .family, amount: 228, date: Date(), note: "", recurring: false))
-                .preferredColorScheme(.dark)
-            TransactionRowView(transaction: Transaction(id: "", userId: "", fromAccountId: "3a6LSNqV2lUQdtEgLqQe", type: .expense, currency: .eur, category: .gifts, amount: 1337, date: Date(), note: "", recurring: false))
-        }
-    }
-}
+//struct TransactionRowView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Group {
+//            TransactionRowView(transaction: Transaction(id: "", userId: "", fromAccountId: "H5xTa17a8ChCwsPFFyOo", type: .income, currency: .uah, category: .family, amount: 228, date: Date(), note: "", recurring: false))
+//                .preferredColorScheme(.dark)
+//            TransactionRowView(transaction: Transaction(id: "", userId: "", fromAccountId: "3a6LSNqV2lUQdtEgLqQe", type: .expense, currency: .eur, category: .gifts, amount: 1337, date: Date(), note: "", recurring: false))
+//        }
+//    }
+//}
 
